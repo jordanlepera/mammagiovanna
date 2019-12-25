@@ -1,56 +1,72 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import _uniqueId from 'lodash/uniqueId';
+import { Link, withTranslation } from '../i18n';
+import SelectCountry from './CountrySelect';
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+const Nav = ({ t }) => {
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+  const links = [
+    {
+      title: t('homepage'),
+      url: '/'
+    },
+    {
+      title: t('menu'),
+      url: '/menu'
+    }
+  ];
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+  const Navlink = () => links.map(link => (
+    <Link href={link.url} key={_uniqueId('navlink-')}>
+      <NavLink disableRipple>{link.title}</NavLink>
+    </Link>
+  ));
 
-export default Nav
+  return (
+    <>
+      <NavBar position="static">
+        <Toolbar>
+          <HeaderLogo src="/logo-txt-vector.png" alt="Mamma Giovanna's logo" />
+          <NavlinkContainer>
+            <Navlink />
+          </NavlinkContainer>
+          <SelectCountry />
+        </Toolbar>
+      </NavBar>
+    </>
+  );
+};
+
+Nav.getInitialProps = async () => ({
+  namespacesRequired: ['header'],
+});
+
+Nav.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+const NavlinkContainer = styled.div`
+  flex-grow: 1;
+`;
+
+const NavLink = styled(Button)`
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+const NavBar = styled(AppBar)`
+  background-color: #4c2d19;
+`;
+
+const HeaderLogo = styled.img`
+  width: 75px;
+  margin-right: 20px;
+`;
+
+export default withTranslation('header')(Nav);
