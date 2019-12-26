@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from '../i18n';
 import Head from 'next/head';
-import Nav from '../components/Nav';
-import Banner from '../components/Banner';
+import Nav from './nav';
+import Banner from './Banner';
 
 const Header = props => {
   const { title, t } = props;
