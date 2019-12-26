@@ -1,29 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Head from 'next/head';
 import { withTranslation } from '../i18n';
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Homepage = ({ t }) => {
 
   return (
     <>
-      <main>
-        <Header title={t('h1')} />
-      </main>
-      <Footer />
+      <Head>
+        <title>{t('homepage')} - {t('restaurant')}</title>
+      </Head>
+      {t('homepage')}
     </>
   );
 };
 
 Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'footer'],
+  namespacesRequired: ['header'],
 });
 
 Homepage.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation('common')(Homepage);
+export default withTranslation('header')(Homepage);

@@ -1,23 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Head from 'next/head';
 import { withTranslation } from '../i18n';
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Menu = ({ t }) => (
   <>
-    <main>
-      <Header title={t('h1')} />
-      {t('menu')}
-    </main>
-    <Footer />
+    <Head>
+      <title>{t('menu')} - {t('restaurant')}</title>
+    </Head>
+    {t('menu')}
   </>
 );
 
 Menu.getInitialProps = async () => ({
-  namespacesRequired: ['menu', 'header'],
+  namespacesRequired: ['header'],
 });
 
 Menu.propTypes = {

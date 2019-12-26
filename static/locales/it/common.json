@@ -1,7 +1,4 @@
 {
-  "h1": "Un semplice esempio",
-  "change-locale": "Cambia lingua",
-  "to-second-page": "Vai alla seconda pagina",
   "error-with-status": "Si è verificato un errore {{statusCode}} sul server",
   "error-without-status": "Si è verificato un errore sul server"
 }

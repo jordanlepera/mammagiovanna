@@ -29,7 +29,7 @@ const Nav = ({ t }) => {
 
   return (
     <>
-      <NavBar position="static">
+      <NavBar position="fixed">
         <Toolbar>
           <HeaderLogo src="/logo-txt-vector.png" alt="Mamma Giovanna's logo" />
           <NavlinkContainer>

@@ -3,6 +3,7 @@ import App from 'next/app';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
+import Layout from '../components/Layout';
 import { appWithTranslation } from '../i18n';
 
 class MyApp extends App {
@@ -22,7 +23,9 @@ class MyApp extends App {
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ThemeProvider>
       </StylesProvider>
     );
