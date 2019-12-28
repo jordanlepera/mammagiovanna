@@ -88,8 +88,8 @@ const HomeContent = styled.div`
   padding-bottom: 100px;
   line-height: 3em;
   @media (max-width: 500px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
   }
 `;
 
