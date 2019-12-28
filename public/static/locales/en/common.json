@@ -1,0 +1,17 @@
+{
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "description": "This is a non-page component that requires its own namespace",
+  "restaurant": "Mamma Giovanna Restaurant",
+  "homepage": "Home",
+  "menu": "Menu",
+  "h1": "A second page, to demonstrate routing",
+  "back-to-home": "Back to home",
+  "opening-time": "Opening time",
+  "contact": "Contact",
+  "opening-days": "From monday to saturday",
+  "lunch-hours": "Lunch: 12h00 - 14h00",
+  "dinner-hours": "Dinner: 19h00 - 22h00",
+  "closed": "Closed on sunday",
+  "follow-us": "Follow us on social networks"
+}

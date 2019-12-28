@@ -1,4 +1,0 @@
-{
-  "error-with-status": "Si è verificato un errore {{statusCode}} sul server",
-  "error-without-status": "Si è verificato un errore sul server"
-}
