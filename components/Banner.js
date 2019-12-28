@@ -8,6 +8,7 @@ const Banner = () => {
 };
 
 const ImgBanner = styled.img`
+  margin-top: 64px;
   width: 100%;
 `;
 

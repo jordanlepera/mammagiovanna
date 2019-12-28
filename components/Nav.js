@@ -29,7 +29,7 @@ const Nav = ({ t }) => {
 
   return (
     <>
-      <NavBar position="fixed">
+      <NavBar>
         <Toolbar>
           <HeaderLogo src="/logo-txt-vector.png" alt="Mamma Giovanna's logo" />
           <NavlinkContainer>
@@ -43,7 +43,7 @@ const Nav = ({ t }) => {
 };
 
 Nav.getInitialProps = async () => ({
-  namespacesRequired: ['header'],
+  namespacesRequired: ['common'],
 });
 
 Nav.propTypes = {
@@ -69,4 +69,4 @@ const HeaderLogo = styled.img`
   margin-right: 20px;
 `;
 
-export default withTranslation('header')(Nav);
+export default withTranslation('common')(Nav);

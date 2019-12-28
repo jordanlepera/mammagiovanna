@@ -13,11 +13,11 @@ const Menu = ({ t }) => (
 );
 
 Menu.getInitialProps = async () => ({
-  namespacesRequired: ['header'],
+  namespacesRequired: ['common'],
 });
 
 Menu.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation('header')(Menu);
+export default withTranslation('common')(Menu);
