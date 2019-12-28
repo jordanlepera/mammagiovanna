@@ -11,7 +11,7 @@ const ImgBanner = styled.img`
   margin-top: 64px;
   width: 100%;
   @media (max-width: 500px) {
-    margin-top: 230px;
+    margin-top: 221px;
   }
 `;
 

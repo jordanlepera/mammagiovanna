@@ -17,9 +17,9 @@ const Homepage = ({ t }) => {
         <title>{t('homepage')} - {t('restaurant')}</title>
       </Head>
       <HomeContent>
-        <Grid container>
+        <Grid container justify="center">
           <Grid container justify="center" alignItems="center">
-            <Grid item xs={12} md={6} style={{ borderRight: '1px solid #ebebeb' }}>
+            <GridCellWithRightBorder item xs={10} md={6}>
               <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('opening-time')}>
                 {t('opening-days')}
                 <br />
@@ -29,8 +29,8 @@ const Homepage = ({ t }) => {
                 <br />
                 {t('closed')}
               </HomePanel>
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </GridCellWithRightBorder>
+            <Grid item xs={10} md={6}>
               <HomePanel icon={<FontAwesomeIcon icon={faAddressCard} size="4x" />} title={t('contact')}>
                 12 rue des marchands
                 <br />
@@ -42,19 +42,19 @@ const Homepage = ({ t }) => {
               </HomePanel>
             </Grid>
           </Grid>
-          <Grid item xs={12} style={{ borderTop: '1px solid #ebebeb' }}>
+          <Grid item xs={10} style={{ borderTop: '1px solid #ebebeb' }}>
             <HomePanel title={t('follow-us')}>
               <SocialLink href="https://www.facebook.com/mammagiovanna.colmar/" target="blank">
-                <SocialIcon icon={faFacebookF} size="4x" />
+                <SocialIcon icon={faFacebookF} />
               </SocialLink>
               {/* <SocialLink href="" target="blank">
-                <SocialIcon icon={faInstagram} size="4x" />
+                <SocialIcon icon={faInstagram} />
               </SocialLink> */}
               <SocialLink href="https://www.google.com/search?client=firefox-b-d&q=mamma+giovanna+colmar" target="blank">
-                <SocialIcon icon={faGoogle} size="4x" />
+                <SocialIcon icon={faGoogle} />
               </SocialLink>
               <SocialLink href="https://www.tripadvisor.fr/Restaurant_Review-g187073-d10439955-Reviews-Mamma_Giovanna-Colmar_Haut_Rhin_Grand_Est.html?m=19905" target="blank">
-                <SocialIcon icon={faTripadvisor} size="4x" />
+                <SocialIcon icon={faTripadvisor} />
               </SocialLink>
             </HomePanel>
           </Grid>
@@ -74,10 +74,23 @@ const rotate = keyframes`
   }
 `;
 
+const GridCellWithRightBorder = styled(Grid)`
+  @media (min-width: 960px) {
+    border-right: 1px solid #ebebeb;
+  }
+  @media (max-width: 959px) {
+    border-bottom: 1px solid #ebebeb;
+  }
+`;
+
 const HomeContent = styled.div`
   padding-top: 100px;
   padding-bottom: 100px;
   line-height: 3em;
+  @media (max-width: 500px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 `;
 
 const SocialLink = styled.a`
@@ -85,9 +98,13 @@ const SocialLink = styled.a`
 `;
 
 const SocialIcon = styled(FontAwesomeIcon)`
-  margin: 40px 100px;
+  margin: 20px 40px;
+  font-size: 5vh;
   &:hover {
     animation: ${rotate} 0.3s linear;
+  }
+  @media (min-width: 960px) {
+    margin: 40px 100px;
   }
 `;
 
