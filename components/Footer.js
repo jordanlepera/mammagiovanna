@@ -67,7 +67,7 @@ const Footer = ({ t }) => {
             <Navlink />
           </NavBlock>
           <GoTopBlock>
-            <GoUpButton>
+            <GoUpButton onClick={() => window.scrollTo(0, 0)}>
               <SocialIcon icon={faArrowAltCircleUp} />
               {t('go-to-top')}
             </GoUpButton>
@@ -88,6 +88,7 @@ const Footer = ({ t }) => {
 
 const FooterLink = styled.a`
   text-decoration: none;
+  color: #ebebeb;
 `;
 
 const Title = styled.div`
@@ -96,7 +97,7 @@ const Title = styled.div`
 
 const SocialIcon = styled(FontAwesomeIcon)`
   font-size: 5vh;
-  color: #3D3D3D;
+  color: white;
   margin-bottom: 10px;
 `;
 
@@ -109,6 +110,7 @@ const GoUpButton = styled(Button)`
       flex-direction: column;
       line-height: 1em;
       text-transform: none;
+      color: white;
     }
 `;
 
@@ -143,6 +145,9 @@ const FooterFlex = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: #635959;
+  padding-top: 30px;
+  color: white;
 `;
 
 const FooterContainer = styled.div`
@@ -160,7 +165,7 @@ const Author = styled.footer`
   text-align: center;
   color: white;
   padding: 15px;
-  background-color: #635959;
+  background-color: #4c2d19;
 `;
 
 Footer.getInitialProps = async () => ({
