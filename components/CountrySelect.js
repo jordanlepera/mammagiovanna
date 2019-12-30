@@ -34,8 +34,6 @@ const CountrySelect = () => {
       value={languageOptions.find(o => o.value === i18n.language)}
       options={languageOptions}
       onChange={handleChange}
-      instanceId={_uniqueId()}
-      id="33"
     />
   );
 };

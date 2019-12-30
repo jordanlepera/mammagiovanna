@@ -60,10 +60,6 @@ class MyApp extends App {
     `;
 
     document.body.appendChild(googleAnalytics);
-
-    const body = document.getElementsByTagName('body');
-
-    body[0].className = body[0].className.replace(/\bpreload\b/g, '');
   }
 
   render() {

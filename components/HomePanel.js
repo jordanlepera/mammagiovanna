@@ -38,16 +38,6 @@ const Panel = styled(Paper)`
   padding: 20px;
   text-align: center;
   color: #3D3D3D;
-  ${'' /* box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0); */}
-  ${'' /* transform: scale(1) translateY(0px); */}
-  ${'' /* transition: all 0.5s ease; */}
-  ${'' /* z-index: 10;
-  &:hover {
-    @media (min-width: 501px) {
-      box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.10);
-      transform: scale(1.01) translateY(-3px);
-      z-index: 1000;
-    } */}
   }
 `;
 

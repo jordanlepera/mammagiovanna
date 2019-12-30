@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import { withTranslation } from '../i18n';
 import HomePanel from '../components/HomePanel';
@@ -64,16 +64,6 @@ const Homepage = ({ t }) => {
   );
 };
 
-// const rotate = keyframes`
-//   from {
-//     transform: rotate(0deg);
-//   }
-
-//   to {
-//     transform: rotate(360deg);
-//   }
-// `;
-
 const GridCellWithRightBorder = styled(Grid)`
   @media (min-width: 960px) {
     border-right: 1px solid #ebebeb;
@@ -100,9 +90,6 @@ const SocialLink = styled.a`
 const SocialIcon = styled(FontAwesomeIcon)`
   margin: 20px 40px;
   font-size: 5vh;
-  ${'' /* &:hover {
-    animation: ${rotate} 0.3s linear;
-  } */}
   @media (min-width: 960px) {
     margin: 40px 100px;
   }
