@@ -83,7 +83,9 @@ const NavToolbar = styled(Toolbar)`
 
 const HeaderLogo = styled.img`
   width: 75px;
-  margin-bottom: 10px;
+  @media (max-width: 500px) {
+    margin-bottom: 10px;
+  }
   @media (min-width: 501px) {
     margin-right: 20px;
   }
