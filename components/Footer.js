@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import _uniqueId from 'lodash/uniqueId';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { withTranslation } from '../i18n';
 
 const Footer = ({ t }) => {
@@ -40,21 +40,21 @@ const Footer = ({ t }) => {
   ];
 
   const Navlink = () => navlinks.map(link => (
-    <>
-      <FooterLink href={link.url} key={_uniqueId('navlink-')}>
+    <div key={_uniqueId('navlink-')}>
+      <FooterLink href={link.url}>
         {link.title}
       </FooterLink>
       <br />
-    </>
+    </div>
   ));
 
   const Sociallink = () => sociallinks.map(link => (
-    <>
-      <FooterLink href={link.url} target="blank" key={_uniqueId('sociallink-')}>
+    <div key={_uniqueId('sociallink-')}>
+      <FooterLink href={link.url} target="blank">
         {link.title}
       </FooterLink>
       <br />
-    </>
+    </div>
   ));
 
   return (

@@ -6,8 +6,11 @@ import theme from '../components/theme';
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="en">
+      <html lang="fr">
         <Head>
+          <base href="./" />
+          <link data-react-helmet="true" rel="icon" href="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-L9iS6Wm2hynS5H9Gj7j%2Favatar.png?generation=1523462254548780&amp;alt=media" />
+          <meta name="description" content="Restaurant Mamma Giovanna à Colmar. Venez déguster nos délicieuses pizzas et nos authentiques spécialités italiennes."></meta>
           <meta charSet="utf-8" />
           <meta
             name="viewport"
