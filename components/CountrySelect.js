@@ -1,7 +1,14 @@
 import React from 'react';
+import dynamic from "next/dynamic";
 import styled from 'styled-components';
-import Select from 'react-select';
+import _uniqueId from 'lodash/uniqueId';
 import { i18n } from '../i18n';
+
+//Remove use of ssr fo this component because it creates an error in the console
+const Select = dynamic(() => import('react-select'), {
+  ssr: false,
+});
+
 
 const CountrySelect = () => {
 
@@ -27,6 +34,8 @@ const CountrySelect = () => {
       value={languageOptions.find(o => o.value === i18n.language)}
       options={languageOptions}
       onChange={handleChange}
+      instanceId={_uniqueId()}
+      id="33"
     />
   );
 };

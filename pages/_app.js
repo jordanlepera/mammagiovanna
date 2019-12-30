@@ -44,7 +44,7 @@ class MyApp extends App {
 
       //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
                         
-      "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
+      "readmoreLink": "/cookiespolicy", /* Change the default readmore link */
       });
     `;
 
@@ -60,6 +60,10 @@ class MyApp extends App {
     `;
 
     document.body.appendChild(googleAnalytics);
+
+    const body = document.getElementsByTagName('body');
+
+    body[0].className = body[0].className.replace(/\bpreload\b/g, '');
   }
 
   render() {

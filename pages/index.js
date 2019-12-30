@@ -64,15 +64,15 @@ const Homepage = ({ t }) => {
   );
 };
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+// const rotate = keyframes`
+//   from {
+//     transform: rotate(0deg);
+//   }
 
-  to {
-    transform: rotate(360deg);
-  }
-`;
+//   to {
+//     transform: rotate(360deg);
+//   }
+// `;
 
 const GridCellWithRightBorder = styled(Grid)`
   @media (min-width: 960px) {
@@ -100,9 +100,9 @@ const SocialLink = styled.a`
 const SocialIcon = styled(FontAwesomeIcon)`
   margin: 20px 40px;
   font-size: 5vh;
-  &:hover {
+  ${'' /* &:hover {
     animation: ${rotate} 0.3s linear;
-  }
+  } */}
   @media (min-width: 960px) {
     margin: 40px 100px;
   }
