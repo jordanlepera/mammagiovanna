@@ -24,7 +24,7 @@
   "gnocchi-gorgonzola-ing": "Gnocchi de pommes de terre au Gorgonzola et aux noix",
   "secondo": "Secondi Piatti - Second plat",
   "salmon": "Salmone alla griglia con verdurine di stagione all’origano",
-  "salmon-ing": "Saumon grille avec legumes de saison et origan",
+  "salmon-ing": "Saumon grillé avec légumes de saison et origan",
   "shrimp": "Spiedo di gamberoni al Cognac, salsa pantesca, con tortino di patate",
   "shrimp-ing": "Brochette de crevettes au Cognac, sauce pantesca câpres olives noires tomates, galette de pomme de terre",
   "beef": "Contro filetto al guanciale, Marsala, pepe nero con patate al forno",
@@ -72,11 +72,11 @@
   "calzone-ing": "Sauce tomate, mozzarella, jambon, champignons, œuf",
   "white-pizza": "Pizza base blanche (sans tomate)",
   "burratina": "Burratina (de mai à fin septembre)",
-  "burratina-ing": "Mozzarella de Burratina, huilde d’olive, Jambon de Parme, basilic frais",
+  "burratina-ing": "Mozzarella de Burratina, huile d’olive, Jambon de Parme, basilic frais",
   "al-salmone": "Al Salmone Fresco",
   "al-salmone-ing": "Base blanche, ricotta aux épices italiennes, saumon frais, câpres, tomates cerises, oignons",
   "chicken": "Poulet",
-  "chicken-ing": "Base blanche, ricotta aux épices italiennes, mozzarella, poulet mariné, tomates cerise, oignons, poivrons",
+  "chicken-ing": "Base blanche, ricotta aux épices italiennes, mozzarella, poulet mariné, tomates cerises, oignons, poivrons",
   "white-bufala": "Bufala Bianca",
-  "white-bufala-ing": "Base blanche, mozzarella de Bufala, basilic, tomates cerise"
+  "white-bufala-ing": "Base blanche, mozzarella de Bufala, basilic, tomates cerises"
 }
