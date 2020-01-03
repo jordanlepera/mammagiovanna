@@ -1,0 +1,20 @@
+{
+  "error-with-status": "Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten",
+  "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
+  "description": "Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert",
+  "restaurant": "Mamma Giovanna Restaurant",
+  "homepage": "Startseite",
+  "menu": "Menu",
+  "h1": "Eine zweite Seite, um das Routing zu demonstrieren",
+  "back-to-home": "Zurück zur Hauptseite",
+  "opening-time": "Öffnungszeiten",
+  "contact": "Kontakt",
+  "opening-days": "Montag bis Samstag",
+  "lunch-hours": "Mittagessen: 12:00 - 14:00",
+  "dinner-hours": "Abendessen: 19:00 - 22:00",
+  "closed": "Sonntag geschlossen",
+  "follow-us": "Verfolgen Sie unsere Neuigkeiten in sozialen Netzwerken",
+  "navigation": "Navigation",
+  "social-networks": "Soziale Netzwerke",
+  "go-to-top": "Nach oben zurückkehren"
+}
