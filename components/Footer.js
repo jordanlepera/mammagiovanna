@@ -80,7 +80,7 @@ const Footer = ({ t }) => {
         </FooterContainer>
       </FooterFlex>
       <Author>
-        © 2019 - Jordan Le Pera
+        © 2020 - Jordan Le Pera
       </Author>
     </footer>
   );
