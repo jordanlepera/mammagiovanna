@@ -9,7 +9,12 @@ export default class MyDocument extends Document {
       <html lang="fr">
         <Head>
           <base href="./" />
-          <link data-react-helmet="true" rel="icon" href="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-L9iS6Wm2hynS5H9Gj7j%2Favatar.png?generation=1523462254548780&amp;alt=media" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="msapplication-TileColor" content="#FFFAEE" />
           <meta name="description" content="Restaurant Mamma Giovanna à Colmar. Venez déguster nos délicieuses pizzas et nos authentiques spécialités italiennes."></meta>
           <meta charSet="utf-8" />
           <meta
