@@ -25,8 +25,9 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,800|Monoton|Raleway:200,600&display=swap"
           />
+          {/* <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet" /> */}
         </Head>
         <body>
           <Main />
