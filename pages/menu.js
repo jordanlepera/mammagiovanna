@@ -9,23 +9,6 @@ import { withTranslation } from '../i18n';
 
 const Menu = ({ t }) => {
 
-  const antipasti = [
-    {
-      name: t('menu:carpaccio-polipo'),
-      ing: t('menu:carpaccio-polipo-ing'),
-      price: 12
-    },
-    {
-      name: t('menu:bresaola'),
-      ing: t('menu:bresaola-ing'),
-      price: 14
-    }
-  ];
-
-  const Antipasti = antipasti.map(elem => {
-    return <MenuArticle key={_uniqueId('antipasti-')} name={elem.name} ing={elem.ing} price={elem.price} />;
-  });
-
   return (
     <>
       <Head>
@@ -33,7 +16,6 @@ const Menu = ({ t }) => {
       </Head>
       <MenuTitle>{t('common:menu')}</MenuTitle>
       <MenuSection title={t('menu:antipasti')}>
-        {/* <Antipasti /> */}
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:caprese')} ing={t('menu:caprese-ing')} price={13} />
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bruschetta')} ing={t('menu:bruschetta-ing')} price={12.5} />
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bresaola')} ing={t('menu:bresaola-ing')} price={14} />
