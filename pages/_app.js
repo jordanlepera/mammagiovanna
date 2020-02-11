@@ -28,7 +28,7 @@ class MyApp extends App {
 
       "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
       "cookieName": "tarteaucitron", /* Cookie name */
-  
+
       "orientation": "bottom", /* Banner position (top - bottom) */
       "showAlertSmall": true, /* Show the small banner on bottom right */
       "cookieslist": false, /* Show the cookie list */
@@ -43,7 +43,7 @@ class MyApp extends App {
       "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
 
       //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
-                        
+
       "readmoreLink": "/cookiespolicy", /* Change the default readmore link */
       });
     `;

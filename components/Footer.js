@@ -25,10 +25,10 @@ const Footer = ({ t }) => {
       title: 'Facebook',
       url: 'https://www.facebook.com/mammagiovanna.colmar/'
     },
-    // {
-    //   title: 'Instagram',
-    //   url: ''
-    // },
+    {
+      title: 'Instagram',
+      url: 'https://www.instagram.com/mammagiovanna_fr/'
+    },
     {
       title: 'Google',
       url: 'https://www.google.com/search?client=firefox-b-d&q=mamma+giovanna+colmar'
