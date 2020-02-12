@@ -27,7 +27,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,800|Monoton|Raleway:200,600&display=swap"
           />
-          {/* <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet" /> */}
         </Head>
         <body>
           <Main />
