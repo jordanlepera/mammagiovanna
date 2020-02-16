@@ -15,7 +15,7 @@ var scripts = document.getElementsByTagName('script'),
     tarteaucitronProLoadServices,
     tarteaucitronNoAdBlocker = false;
 
-console.log(scripts[scripts.length - 1].src.split('?')[0]);
+console.log(scripts);
 
 
 var tarteaucitron = {
