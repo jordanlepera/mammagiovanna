@@ -2,7 +2,7 @@
 
 // define correct path for files inclusion
 var scripts = document.getElementsByTagName('script'),
-    path = scripts[0].src.split('?')[0],
+    path = scripts[2].src.split('?')[0],
     tarteaucitronForceCDN = (tarteaucitronForceCDN === undefined) ? '' : tarteaucitronForceCDN,
     cdn = (tarteaucitronForceCDN === '') ? path.split('/').slice(0, -1).join('/') + '/' : tarteaucitronForceCDN,
     alreadyLaunch = (alreadyLaunch === undefined) ? 0 : alreadyLaunch,
