@@ -48,7 +48,7 @@ class MyApp extends App {
       });
     `;
 
-    document.head.appendChild(tarteaucitronScript);
+    document.body.appendChild(tarteaucitronScript);
 
     const googleAnalytics = document.createElement('script');
 
