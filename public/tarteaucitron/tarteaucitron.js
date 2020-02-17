@@ -2,7 +2,7 @@
 
 // define correct path for files inclusion
 var scripts = document.getElementsByTagName('script'),
-    path = scripts[scripts.length - 1].src.split('?')[0],
+    path = scripts[0].src.split('?')[0],
     tarteaucitronForceCDN = (tarteaucitronForceCDN === undefined) ? '' : tarteaucitronForceCDN,
     cdn = (tarteaucitronForceCDN === '') ? path.split('/').slice(0, -1).join('/') + '/' : tarteaucitronForceCDN,
     alreadyLaunch = (alreadyLaunch === undefined) ? 0 : alreadyLaunch,
@@ -14,8 +14,6 @@ var scripts = document.getElementsByTagName('script'),
     timeExpire = 31536000000,
     tarteaucitronProLoadServices,
     tarteaucitronNoAdBlocker = false;
-
-console.log(scripts);
 
 
 var tarteaucitron = {
