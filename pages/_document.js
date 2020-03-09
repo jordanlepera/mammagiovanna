@@ -23,10 +23,6 @@ export default class MyDocument extends Document {
           />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,800|Monoton|Raleway:200,600&display=swap"
-          />
         </Head>
         <body>
           <Main />
