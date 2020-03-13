@@ -6,6 +6,7 @@ export default createGlobalStyle`
     font-family: 'Monoton';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('/fonts/monoton-v9-latin-regular.eot'); /* IE9 Compat Modes */
     src: local('Monoton'), local('Monoton-Regular'),
         url('/fonts/monoton-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -19,6 +20,7 @@ export default createGlobalStyle`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('/fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
     src: local('Roboto'), local('Roboto-Regular'),
         url('/fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -32,6 +34,7 @@ export default createGlobalStyle`
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('/fonts/raleway-v14-latin-regular.eot'); /* IE9 Compat Modes */
     src: local('Raleway'), local('Raleway-Regular'),
         url('/fonts/raleway-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
