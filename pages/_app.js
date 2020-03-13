@@ -69,6 +69,8 @@ class MyApp extends App {
       <StylesProvider injectFirst>
         <Head>
           <script type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
+          <link rel="preload" href="/tarteaucitron/css/tarteaucitron.css?v=20191031" as="style" />
+          <link rel="preload" href="/tarteaucitron/tarteaucitron.js" as="script" />
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
