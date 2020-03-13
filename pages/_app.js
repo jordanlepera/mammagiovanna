@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 import Layout from '../components/Layout';
 import { appWithTranslation } from '../i18n';
-
+import GlobalFonts from '../components/Font';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
@@ -28,7 +28,7 @@ class MyApp extends App {
 
       "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
       "cookieName": "tarteaucitron", /* Cookie name */
-  
+
       "orientation": "bottom", /* Banner position (top - bottom) */
       "showAlertSmall": true, /* Show the small banner on bottom right */
       "cookieslist": false, /* Show the cookie list */
@@ -43,12 +43,12 @@ class MyApp extends App {
       "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
 
       //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
-                        
+
       "readmoreLink": "/cookiespolicy", /* Change the default readmore link */
       });
     `;
 
-    document.head.appendChild(tarteaucitronScript);
+    document.body.appendChild(tarteaucitronScript);
 
     const googleAnalytics = document.createElement('script');
 
@@ -69,12 +69,15 @@ class MyApp extends App {
       <StylesProvider injectFirst>
         <Head>
           <script type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
+          <link rel="preload" href="/tarteaucitron/css/tarteaucitron.css?v=20191031" as="style" />
+          <link rel="preload" href="/tarteaucitron/tarteaucitron.js" as="script" />
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          <GlobalFonts />
         </ThemeProvider>
       </StylesProvider>
     );

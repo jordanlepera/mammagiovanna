@@ -47,9 +47,9 @@ const Homepage = ({ t }) => {
               <SocialLink href="https://www.facebook.com/mammagiovanna.colmar/" target="blank">
                 <SocialIcon icon={faFacebookF} />
               </SocialLink>
-              {/* <SocialLink href="" target="blank">
+              <SocialLink href="https://www.instagram.com/mammagiovanna_fr/" target="blank">
                 <SocialIcon icon={faInstagram} />
-              </SocialLink> */}
+              </SocialLink>
               <SocialLink href="https://www.google.com/search?client=firefox-b-d&q=mamma+giovanna+colmar" target="blank">
                 <SocialIcon icon={faGoogle} />
               </SocialLink>
@@ -91,7 +91,7 @@ const SocialIcon = styled(FontAwesomeIcon)`
   margin: 20px 40px;
   font-size: 5vh;
   @media (min-width: 960px) {
-    margin: 40px 100px;
+    margin: 40px 65px;
   }
 `;
 

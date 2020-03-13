@@ -31,7 +31,7 @@ const Nav = ({ t }) => {
     <>
       <NavBar>
         <NavToolbar>
-          <HeaderLogo src="/logo-txt-vector.png" alt="Mamma Giovanna's logo" />
+          <HeaderLogo src="/logo-txt-vector-base.svg" alt="Mamma Giovanna's logo" />
           <NavlinkContainer>
             <Navlink />
           </NavlinkContainer>

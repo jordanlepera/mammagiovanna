@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 const Banner = () => {
   return (
-    <ImgBanner src="/sallev4.jpg" />
+    <ImgBanner
+      src="/sallev4.jpg"
+      alt="Mamma Giovanna restaurant room"
+    />
   );
 };
 
