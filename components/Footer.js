@@ -40,21 +40,23 @@ const Footer = ({ t }) => {
   ];
 
   const Navlink = () => navlinks.map(link => (
-    <div key={_uniqueId('navlink-')}>
-      <FooterLink href={link.url}>
-        {link.title}
-      </FooterLink>
-      <br />
-    </div>
+    <FooterElem key={_uniqueId('navlink-')}>
+      <div>
+        <FooterLink href={link.url}>
+          {link.title}
+        </FooterLink>
+      </div>
+    </FooterElem>
   ));
 
   const Sociallink = () => sociallinks.map(link => (
-    <div key={_uniqueId('sociallink-')}>
-      <FooterLink href={link.url} target="blank">
-        {link.title}
-      </FooterLink>
-      <br />
-    </div>
+    <FooterElem key={_uniqueId('sociallink-')}>
+      <div>
+        <FooterLink href={link.url} target="blank" rel="noopener">
+          {link.title}
+        </FooterLink>
+      </div>
+    </FooterElem>
   ));
 
   return (
@@ -64,7 +66,9 @@ const Footer = ({ t }) => {
           <NavBlock>
             <Title>{t('navigation')}</Title>
             <br />
-            <Navlink />
+            <FooterElemList>
+              <Navlink />
+            </FooterElemList>
           </NavBlock>
           <GoTopBlock>
             <GoUpButton onClick={() => window.scrollTo(0, 0)}>
@@ -75,7 +79,9 @@ const Footer = ({ t }) => {
           <SocialBlock>
             <Title>{t('social-networks')}</Title>
             <br />
-            <Sociallink />
+            <FooterElemList>
+              <Sociallink />
+            </FooterElemList>
           </SocialBlock>
         </FooterContainer>
       </FooterFlex>
@@ -85,6 +91,16 @@ const Footer = ({ t }) => {
     </footer>
   );
 };
+
+const FooterElemList = styled.ul`
+  padding-inline-start: 0px;
+`;
+
+const FooterElem = styled.li`
+  list-style-type: none;
+  min-width: 48px;
+  min-height: 30px;
+`;
 
 const FooterLink = styled.a`
   text-decoration: none;
@@ -119,6 +135,7 @@ const NavBlock = styled.div`
   border-right: 1px solid #ebebeb;
   height: 100%;
   width: 33.33%;
+  min-height: 208px;
 `;
 
 const GoTopBlock = styled.div`
@@ -136,7 +153,7 @@ const SocialBlock = styled.div`
   padding: 0 20px 0 20px;
   border-left: 1px solid #ebebeb;
   text-align: right;
-  height: 100%;
+  height: 208px;
   width: 33.33%;
 `;
 
@@ -157,7 +174,7 @@ const FooterContainer = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   margin-bottom: 20px;
-  height: 150px;
+  /* height: 150px; */
 `;
 
 const Author = styled.footer`
