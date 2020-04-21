@@ -15,7 +15,19 @@ const Menu = ({ t }) => {
         <title>{t('common:menu')} - {t('common:restaurant')}</title>
       </Head>
       <MenuTitle>{t('common:menu')}</MenuTitle>
-      <MenuSection title={t('menu:antipasti')}>
+      <Section>
+        <Emoji>⚠️</Emoji><br />
+        {t('common:dear-customers')},<br /><br />
+        {t('common:only-to-take-away')}.<br />
+        {t('common:no-delivery')}.<br /><br />
+
+        {t('common:menu-adapted')}.<br /><br />
+        {t('common:contact-us')} !<br /><br />
+        {t('common:thanks')} !<br />
+        <Emoji>😋🍕</Emoji><br /><br />
+        {t('common:the-board')}.
+      </Section>
+      {/* <MenuSection title={t('menu:antipasti')}>
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:caprese')} ing={t('menu:caprese-ing')} price={13} />
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bruschetta')} ing={t('menu:bruschetta-ing')} price={12.5} />
         <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bresaola')} ing={t('menu:bresaola-ing')} price={14} />
@@ -52,12 +64,12 @@ const Menu = ({ t }) => {
         <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={6.8} />
         <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mille-feuille')} ing={t('menu:mille-feuille-ing')} price={6.8} />
         <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={6.8} />
-      </MenuSection>
+      </MenuSection> */}
       <MenuSection title={t('menu:pizza')}>
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4formaggi')} ing={t('menu:4formaggi-ing')} price={12.5} />
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak')} ing={t('menu:pizza-steak-ing')} price={15} />
-        <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={15} />
-        <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={12.8} />
+        {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={15} /> */}
+        {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={12.8} /> */}
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:diavola')} ing={t('menu:diavola-ing')} price={12.8} />
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={12.5} />
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:mamma-giovanna')} ing={t('menu:mamma-giovanna-ing')} price={13.5} />
@@ -73,14 +85,31 @@ const Menu = ({ t }) => {
         <MenuArticle key={_uniqueId('pizza-')} name={t('menu:parmigiana')} ing={t('menu:parmigiana-ing')} price={12.8} />
       </MenuSection>
       <MenuSection title={t('menu:white-pizza')}>
-        <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:burratina')} ing={t('menu:burratina-ing')} price={15.9} />
+        {/* <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:burratina')} ing={t('menu:burratina-ing')} price={15.9} />
         <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:al-salmone')} ing={t('menu:al-salmone-ing')} price={15} />
-        <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={12.8} />
+        <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={12.8} /> */}
         <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:white-bufala')} ing={t('menu:white-bufala-ing')} price={13.5} />
       </MenuSection>
     </>
   );
 };
+
+const Emoji = styled.span`
+  font-size: 3em;
+`;
+
+const Section = styled.div`
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  margin: 20px 5%;
+  border-radius: 30px;
+  background-color: tomato;
+  padding: 30px;
+  border: 3px solid lightcoral;
+`;
 
 const MenuTitle = styled.div`
   font-size: 10em;
