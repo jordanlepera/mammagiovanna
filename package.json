@@ -10,7 +10,9 @@
     "dev": "node index.js",
     "build": "next build",
     "start": "NODE_ENV=production node index.js",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "next export && cd out && firebase deploy && cd ..",
+    "clean-deploy": "rm -rf out"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",

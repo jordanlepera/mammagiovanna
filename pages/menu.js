@@ -99,7 +99,7 @@ const Emoji = styled.span`
 `;
 
 const Section = styled.div`
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   font-weight: bold;
   color: white;

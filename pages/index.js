@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
-import { withTranslation } from '../i18n';
+import { Link, withTranslation } from '../i18n';
 import HomePanel from '../components/HomePanel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faGoogle, faTripadvisor } from '@fortawesome/free-brands-svg-icons';
@@ -19,15 +19,34 @@ const Homepage = ({ t }) => {
       <HomeContent>
         <Grid container justify="center">
           <Grid container justify="center" alignItems="center">
+            <Section>
+              <Emoji>⚠️</Emoji><br />
+              {t('dear-customers')},<br /><br />
+              {t('new-hours')}.<br />
+              {t('take-away')}.<br />
+              {t('check-menu')} <Link href="/menu">{t('here')}</Link>.<br />
+              {t('thanks')} !<br />
+              <Emoji>😋🍕</Emoji><br /><br />
+              {t('the-board')}.
+            </Section>
+          </Grid>
+          <Grid container justify="center" alignItems="center">
             <GridCellWithRightBorder item xs={10} md={6}>
               <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('opening-time')}>
-                {t('opening-days')}
+                {/* {t('opening-days')}
                 <br />
                 {t('lunch-hours')}
                 <br />
                 {t('dinner-hours')}
                 <br />
-                {t('closed')}
+                {t('closed')} */}
+                {t('opening-days-covid')}
+                <br />
+                {t('opening-hours-covid')}
+                <br />
+                {t('closed-covid')}
+                <br />
+                {t('closed-covid-2')}
               </HomePanel>
             </GridCellWithRightBorder>
             <Grid item xs={10} md={6}>
@@ -63,6 +82,25 @@ const Homepage = ({ t }) => {
     </>
   );
 };
+
+const Emoji = styled.span`
+  font-size: 3em;
+  line-height: 1.5em;
+`;
+
+const Section = styled.div`
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  margin: 20px 5%;
+  border-radius: 30px;
+  background-color: tomato;
+  padding: 30px;
+  border: 3px solid lightcoral;
+  line-height: 2em;
+`;
 
 const GridCellWithRightBorder = styled(Grid)`
   @media (min-width: 960px) {
