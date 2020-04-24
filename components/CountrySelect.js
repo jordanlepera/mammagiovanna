@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import dynamic from "next/dynamic";
 import styled from 'styled-components';
 import _uniqueId from 'lodash/uniqueId';
-import { i18n } from '../i18n';
+import Router from 'next-translate/Router'
+import i18nConfig from '../i18n.json';
 
 //Remove use of ssr fo this component because it creates an error in the console
 const Select = dynamic(() => import('react-select'), {
@@ -10,7 +12,8 @@ const Select = dynamic(() => import('react-select'), {
 });
 
 
-const CountrySelect = () => {
+const CountrySelect = props => {
+  const { lang } = props;
 
   const languageOptions = [
     { value: 'fr', label: '🇫🇷 Français' },
@@ -20,7 +23,12 @@ const CountrySelect = () => {
   ];
 
   const handleChange = (selectedOption) => {
-    i18n.changeLanguage(selectedOption.value);
+    if (window.location.href.includes('menu')) {
+      Router.pushI18n({ url: '/menu', options: { lang: selectedOption.value } })
+    } else {
+      Router.pushI18n({ url: '/', options: { lang: selectedOption.value } })
+    }
+
   };
 
   return (
@@ -31,12 +39,16 @@ const CountrySelect = () => {
       isClearable={false}
       isSearchable={false}
       name="language"
-      value={languageOptions.find(o => o.value === i18n.language)}
+      value={languageOptions.find(o => o.value === lang)}
       options={languageOptions}
       onChange={handleChange}
     />
   );
 };
+
+CountrySelect.propTypes = {
+  lang: PropTypes.string
+}
 
 const SelectCountry = styled(Select)`
   font-family: Roboto;

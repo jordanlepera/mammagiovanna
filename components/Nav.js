@@ -5,26 +5,35 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import _uniqueId from 'lodash/uniqueId';
-import { Link, withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
+import Router from 'next-translate/Router';
+// import { Link, withTranslation } from '../i18n';
 import SelectCountry from './CountrySelect';
 
-const Nav = ({ t }) => {
+const Nav = props => {
+  const { lang } = props;
+  const { t } = useTranslation();
 
   const links = [
     {
-      title: t('homepage'),
+      title: t('common:homepage'),
       url: '/'
     },
     {
-      title: t('menu'),
+      title: t('common:menu'),
       url: '/menu'
     }
   ];
 
+  const routeTo = (url, lang) => {
+    // console.log(lang);
+    Router.pushI18n({ url: url, options: { lang: lang } });
+    window.scrollTo(0, 0);
+    // console.log(lang);
+  };
+
   const Navlink = () => links.map(link => (
-    <Link href={link.url} key={_uniqueId('navlink-')}>
-      <NavLink disableRipple>{link.title}</NavLink>
-    </Link>
+    <NavLink disableRipple key={_uniqueId('navlink-')} onClick={() => routeTo(link.url, lang)}>{link.title} </NavLink>
   ));
 
   return (
@@ -35,19 +44,23 @@ const Nav = ({ t }) => {
           <NavlinkContainer>
             <Navlink />
           </NavlinkContainer>
-          <SelectCountry />
+          <SelectCountry lang={lang} />
         </NavToolbar>
       </NavBar>
     </>
   );
 };
 
-Nav.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+// Nav.getInitialProps = async () => ({
+//   namespacesRequired: ['common'],
+// });
+
+// Nav.getStaticProps = async ({ lang }) => {
+//   return { props: { getStaticPropsWorks: true, lang } };
+// };
 
 Nav.propTypes = {
-  t: PropTypes.func.isRequired,
+  lang: PropTypes.string,
 };
 
 const NavlinkContainer = styled.div`
@@ -91,4 +104,4 @@ const HeaderLogo = styled.img`
   }
 `;
 
-export default withTranslation('common')(Nav);
+export default Nav;

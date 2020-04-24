@@ -4,8 +4,6 @@ import Head from 'next/head';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
-import Layout from '../components/Layout';
-import { appWithTranslation } from '../i18n';
 import GlobalFonts from '../components/Font';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
@@ -74,9 +72,7 @@ class MyApp extends App {
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} />
           <GlobalFonts />
         </ThemeProvider>
       </StylesProvider>
@@ -84,4 +80,4 @@ class MyApp extends App {
   }
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
