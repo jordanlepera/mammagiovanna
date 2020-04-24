@@ -1,21 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import _uniqueId from 'lodash/uniqueId';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
-const Footer = ({ t }) => {
+const Footer = () => {
+  const { t } = useTranslation();
 
   const navlinks = [
     {
-      title: t('homepage'),
+      title: t('common:homepage'),
       url: '/'
     },
     {
-      title: t('menu'),
+      title: t('common:menu'),
       url: '/menu'
     }
   ];
@@ -64,7 +64,7 @@ const Footer = ({ t }) => {
       <FooterFlex>
         <FooterContainer>
           <NavBlock>
-            <Title>{t('navigation')}</Title>
+            <Title>{t('common:navigation')}</Title>
             <br />
             <FooterElemList>
               <Navlink />
@@ -73,11 +73,11 @@ const Footer = ({ t }) => {
           <GoTopBlock>
             <GoUpButton onClick={() => window.scrollTo(0, 0)}>
               <SocialIcon icon={faArrowAltCircleUp} />
-              {t('go-to-top')}
+              {t('common:go-to-top')}
             </GoUpButton>
           </GoTopBlock>
           <SocialBlock>
-            <Title>{t('social-networks')}</Title>
+            <Title>{t('common:social-networks')}</Title>
             <br />
             <FooterElemList>
               <Sociallink />
@@ -185,12 +185,16 @@ const Author = styled.footer`
   background-color: #4c2d19;
 `;
 
-Footer.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+// Footer.getInitialProps = async () => ({
+//   namespacesRequired: ['common'],
+// });
 
-Footer.propTypes = {
-  t: PropTypes.func.isRequired,
-};
+// Footer.getStaticProps = async ({ lang }) => {
+//   return { props: { getStaticPropsWorks: true, lang } };
+// };
 
-export default withTranslation('common')(Footer);
+// Footer.propTypes = {
+//   t: PropTypes.func.isRequired,
+// };
+
+export default Footer;

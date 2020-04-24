@@ -7,9 +7,9 @@
     "node": ">=8"
   },
   "scripts": {
-    "dev": "node index.js",
-    "build": "next build",
-    "start": "NODE_ENV=production node index.js",
+    "dev": "next-translate && next dev",
+    "build": "next-translate && next build",
+    "start": "next start",
     "export": "next export",
     "deploy": "next export && cd out && firebase deploy && cd ..",
     "clean-deploy": "rm -rf out"
@@ -29,6 +29,7 @@
     "i18next": "^19.0.2",
     "next": "9.3.5",
     "next-i18next": "^4.3.0",
+    "next-translate": "^0.15.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-select": "^3.0.8",
