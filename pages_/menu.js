@@ -24,7 +24,7 @@ const Menu = () => {
           <Emoji>⚠️</Emoji><br />
           {t('common:dear-customers')},<br /><br />
           {t('common:only-to-take-away')}.<br />
-          {t('common:no-delivery')}.<br /><br />
+          {t('common:delivery')}.<br /><br />
           {t('common:menu-adapted')}.<br /><br />
           {t('common:contact-us')} !<br /><br />
           {t('common:thanks')} !<br />
