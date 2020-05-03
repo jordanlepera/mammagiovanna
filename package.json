@@ -11,7 +11,7 @@
     "build": "next-translate && next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "next export && cd out && firebase deploy && cd ..",
+    "deploy": "next translate && next build && next export && cd out && firebase deploy && cd ..",
     "clean-deploy": "rm -rf out"
   },
   "dependencies": {
