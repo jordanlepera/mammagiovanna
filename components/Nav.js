@@ -7,7 +7,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import _uniqueId from 'lodash/uniqueId';
 import useTranslation from 'next-translate/useTranslation';
 import Router from 'next-translate/Router';
-// import { Link, withTranslation } from '../i18n';
 import SelectCountry from './CountrySelect';
 
 const Nav = props => {
@@ -21,15 +20,13 @@ const Nav = props => {
     },
     {
       title: t('common:menu'),
-      url: '/menu'
+      url: '/menu.html'
     }
   ];
 
   const routeTo = (url, lang) => {
-    // console.log(lang);
     Router.pushI18n({ url: url, options: { lang: lang } });
     window.scrollTo(0, 0);
-    // console.log(lang);
   };
 
   const Navlink = () => links.map(link => (
@@ -50,14 +47,6 @@ const Nav = props => {
     </>
   );
 };
-
-// Nav.getInitialProps = async () => ({
-//   namespacesRequired: ['common'],
-// });
-
-// Nav.getStaticProps = async ({ lang }) => {
-//   return { props: { getStaticPropsWorks: true, lang } };
-// };
 
 Nav.propTypes = {
   lang: PropTypes.string,

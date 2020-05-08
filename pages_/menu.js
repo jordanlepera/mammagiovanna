@@ -63,12 +63,12 @@ const Menu = () => {
           <MenuArticle key={_uniqueId('secondo-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={21.5} />
           <MenuArticle key={_uniqueId('secondo-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={19.5} />
           <MenuArticle key={_uniqueId('secondo-')} name={t('menu:polpette')} ing={t('menu:polpette-ing')} price={16.9} />
-        </MenuSection>
+        </MenuSection>*/}
         <MenuSection title={t('menu:dessert')}>
           <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={6.8} />
-          <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mille-feuille')} ing={t('menu:mille-feuille-ing')} price={6.8} />
-          <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={6.8} />
-        </MenuSection> */}
+          {/* <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mille-feuille')} ing={t('menu:mille-feuille-ing')} price={6.8} />
+          <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={6.8} /> */}
+        </MenuSection>
         <MenuSection title={t('menu:pizza')}>
           <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4formaggi')} ing={t('menu:4formaggi-ing')} price={12.5} />
           <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak')} ing={t('menu:pizza-steak-ing')} price={15} />
