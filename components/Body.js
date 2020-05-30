@@ -21,7 +21,10 @@ const BodyStyled = styled.main`
 `;
 
 const Content = styled.section`
-  width: 1200px;
+  max-width: 1200px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 Body.propTypes = {

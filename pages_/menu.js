@@ -3,11 +3,67 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import _uniqueId from 'lodash/uniqueId';
 import useTranslation from 'next-translate/useTranslation';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import Header from '../components/Header';
 import Body from '../components/Body';
 import Footer from '../components/Footer';
+import MenuSubSection from '../components/MenuSubSection';
 import MenuSection from '../components/MenuSection';
 import MenuArticle from '../components/MenuArticle';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+
+const pitcherWines = [
+  {
+    'name': 'Chianti DOC',
+    'prices': [3.8, 7.5, 14, 0]
+  },
+  {
+    'name': 'Lambrusco Amabile DOC',
+    'prices': [3.1, 6, 11, 0]
+  },
+  {
+    'name': 'Rosé d\'été',
+    'prices': [3.6, 6.9, 13, 18]
+  },
+  {
+    'name': 'Sélection du chef',
+    'prices': [4.4, 8.2, 16, 24]
+  }
+];
+
+const alsacianWines = [
+  {
+    'name': 'Edelzwicker Gross',
+    'prices': [2.5, 4.5, 8, 0]
+  },
+  {
+    'name': 'Pinot Noir Bio Gross',
+    'prices': [4.1, 8.1, 14.9, 23]
+  },
+  {
+    'name': 'Pinot Gris Bio Gross',
+    'prices': [4.1, 8.1, 14.9, 23]
+  },
+  {
+    'name': 'Riesling Bio Gross',
+    'prices': [4.1, 8.1, 14.9, 23]
+  },
+  {
+    'name': 'Muscat Bio Gross',
+    'prices': [4.1, 8.1, 14.9, 23]
+  },
+  {
+    'name': 'Gewurtztraminer Bio Gross',
+    'prices': [4.1, 8.1, 14.9, 23]
+  },
+];
 
 const Menu = () => {
   const { t, lang } = useTranslation();
@@ -31,10 +87,29 @@ const Menu = () => {
           <Emoji>😋🍕</Emoji><br /><br />
           {t('common:the-board')}.
         </Section>
-        {/* <MenuSection title={t('menu:antipasti')}>
-          <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:caprese')} ing={t('menu:caprese-ing')} price={13} />
-          <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bruschetta')} ing={t('menu:bruschetta-ing')} price={12.5} />
-          <MenuArticle key={_uniqueId('antipasti-')} name={t('menu:bresaola')} ing={t('menu:bresaola-ing')} price={14} />
+        {/* <MenuSection title={t('menu:our-salade')}>
+          <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:vitello')} ing={t('menu:vitello-ing')} price={13.5} />
+          <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:salade-burratina')} ing={t('menu:salade-burratina-ing')} price={14.5} />
+          <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:etoile-chef')} ing={t('menu:etoile-chef-ing')} price={14.9} />
+          <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:salade-fraicheur')} ing={t('menu:salade-fraicheur-ing')} price={14.5} />
+          <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:salade')} ing={t('menu:salade-ing')} price={3.5} />
+        </MenuSection>
+        <MenuSection title={t('menu:planchette-apero')}>
+          {t('menu:3-persons')}
+          {t('menu:planchette-apero-ing-a')}
+          {t('menu:planchette-apero-ing-b')}
+        </MenuSection>
+        <MenuSection title={t('menu:menu-piccolo')}>
+          {t('menu:until-10yo')}
+          {t('menu:baby-pizza')}
+          {t('menu:or')}
+          {t('menu:baby-pasta')}
+          {t('menu:or')}
+          {t('menu:ham-french-frie')}
+          {t('menu:+1-ice-cream-ball')}
+        </MenuSection>
+        <MenuSection title={t('suggestion')}>
+          {t('menu:suggestion-ing')}
         </MenuSection>
         <MenuSection title={t('menu:pasta')}>
           <MenuArticle key={_uniqueId('pasta-')} name={t('menu:pasta-kind')} price={12.9}>
@@ -52,21 +127,20 @@ const Menu = () => {
             </i>
           </MenuArticle>
         </MenuSection>
-        <MenuSection title={t('menu:primo')}>
-          <MenuArticle key={_uniqueId('primo-')} name={t('menu:risotto-gamberi-funghi')} ing={t('menu:risotto-gamberi-funghi-ing')} price={18.5} />
-          <MenuArticle key={_uniqueId('primo-')} name={t('menu:gnocchi-sorentina')} ing={t('menu:gnocchi-sorentina-ing')} price={15} />
-          <MenuArticle key={_uniqueId('primo-')} name={t('menu:gnocchi-gorgonzola')} ing={t('menu:gnocchi-gorgonzola-ing')} price={15.5} />
+        <MenuSection title={t('menu:italian-speciality')}>
+          <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:risotto-gamberi')} ing={t('menu:risotto-gamberi-ing')} price={18.5} />
+          <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-romana')} ing={t('menu:gnocchi-romana-ing')} price={15} />
+          <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-peperoni')} ing={t('menu:tagliatelle-pesto-peperonia-ing')} price={14.5} />
         </MenuSection>
-        <MenuSection title={t('menu:secondo')}>
-          <MenuArticle key={_uniqueId('secondo-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={18} />
-          <MenuArticle key={_uniqueId('secondo-')} name={t('menu:steak-forno')} ing={t('menu:steak-forno-ing')} price={20} />
-          <MenuArticle key={_uniqueId('secondo-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={21.5} />
-          <MenuArticle key={_uniqueId('secondo-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={19.5} />
-          <MenuArticle key={_uniqueId('secondo-')} name={t('menu:polpette')} ing={t('menu:polpette-ing')} price={16.9} />
+        <MenuSection title={t('menu:meat-fish')}>
+          <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={18} />
+          <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:milanese')} ing={t('menu:milanese-ing')} price={21} />
+          <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={19.5} />
+          <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:hamburger')} ing={t('menu:hamburger-ing')} price={14.5} />
         </MenuSection>*/}
         <MenuSection title={t('menu:dessert')}>
           <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={6.8} />
-          {/* <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mille-feuille')} ing={t('menu:mille-feuille-ing')} price={6.8} />
+          {/* <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mousse')} ing={t('menu:mousse-ing')} price={6.8} />
           <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={6.8} /> */}
         </MenuSection>
         <MenuSection title={t('menu:pizza')}>
@@ -95,6 +169,97 @@ const Menu = () => {
           <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={12.8} />
           <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:white-bufala')} ing={t('menu:white-bufala-ing')} price={13.5} />
         </MenuSection>
+        <MenuSection title={t('menu:italian-wine')}>
+          <MenuSubSection title={t('menu:red-wine')} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Lambrusco Quercioli DOC Medici'} capacity="75cl" price={15.9} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Primitivo Quota 29 IGT Menhir'} capacity="75cl" price={29.9} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Nero d\'Avola Sicilia IGT Mabis'} capacity="75cl" price={21} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Illivia Salento IGT L. de Castris'} capacity="75cl" price={26.5} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Valpolicella DOC D. V. Negrar'} capacity="37,5cl" price={13.9} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Valpolicella DOC D. V. Negrar'} capacity="75cl" price={21} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Barolo DOCG Beni di Batasiolo'} capacity="75cl" price={48} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Chianti Vernaiolo DOCG R. Macie'} capacity="75cl" price={21} />
+          <MenuArticle key={(_uniqueId('red-wine-'))} name={'Montepulciano DOC C. Thaulero'} capacity="75cl" price={24.9} />
+          <MenuSubSection title={t('menu:white-wine')} />
+          <MenuArticle key={(_uniqueId('white-wine-'))} name={'Gavi del Piemonte DOC Batasiolo'} capacity="75cl" price={26} />
+          <MenuSubSection title={t('menu:rose-wine')} />
+          <MenuArticle key={(_uniqueId('rose-wine-'))} name={'Bardolino Chiar. DOC D. V. Negrar'} capacity="37,5cl" price={13.5} />
+          <MenuArticle key={(_uniqueId('rose-wine-'))} name={'Bardolino Chiar. DOC D. V. Negrar'} capacity="75cl" price={21} />
+          <MenuSubSection title={t('menu:pitcher-wine')} />
+          <PitcherWine wines={pitcherWines} />
+        </MenuSection>
+        <MenuSection title={t('menu:french-wine')}>
+          <MenuSubSection title={t('menu:selection-wine')} />
+          <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Bordeaux Saint-Emilion AOC'} capacity="37,5cl" price={16.5} />
+          <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Bordeaux Saint-Emilion AOC'} capacity="75cl" price={29.9} />
+          <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Brouilly Briante AOC'} capacity="37,5cl" price={15.5} />
+          <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Brouilly Briante AOC'} capacity="75cl" price={25.5} />
+          <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Vacqueyras AOC'} capacity="75cl" price={25} />
+          <MenuSubSection title={t('menu:alsacian-wine')} />
+          <PitcherWine wines={alsacianWines} />
+        </MenuSection>
+        {/* <MenuSection title={t('menu:drink')}>
+          <MenuSubSection title={t('menu:aperitif')} />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:aperitif-maison')} price={4.9} capacity="12cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pastis')} price={3.5} capacity="2cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:campari')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:kir-royal')} price={6.5} capacity="12cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:alsacian-kir')} price={3.9} capacity="12cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:picon')} price={3.9} capacity="25cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:suze')} price={3.9} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:heineken')} price={3.6} capacity="25cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:heineken')} price={6.5} capacity="50cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={3.9} capacity="25cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={6.9} capacity="50cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:amer')} price={3.9} capacity="25cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:martini')} price={3.9} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:porto')} price={3.9} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:gin')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:prosecco')} price={4.9} capacity="12cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:spritz')} ing={t('menu:spritz-ing')} price={6.8} capacity="18cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:whisky')} price={6.9} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:vodka')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:malibu')} price={5.5} capacity="4cl" />
+          <MenuSubSection title={t('menu:digestive')} />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:vodka')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:baby')} price={3.5} capacity="2cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:baileys')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:rhum')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:whisky-jb')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:whisky-jack')} price={6.9} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:cognac')} price={6.5} capacity="2cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:eau-de-vie')} price={6.5} ing={t('menu:eau-de-vie-ing')} capacity="2cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:get27')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:amaretto')} price={5.5} capacity="4cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:grappa')} price={6} capacity="2cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:sambuca')} price={5.5} capacity="3cl" />
+          <MenuArticle key={_uniqueId('digestive-')} name={t('menu:limoncello')} price={5.5} capacity="3cl" />
+          <MenuSubSection title={t('menu:soft-drink')} />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:lisbeth')} price={3} capacity="50cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:lisbeth')} price={4.5} capacity="1L" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:san-pellegrino')} price={3.5} capacity="50cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:san-pellegrino')} price={4.9} capacity="1L" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:perrier')} price={3.5} capacity="33cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:limonade')} price={2.5} capacity="25cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:pom-lisbeth')} price={3.5} capacity="33cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:coca')} price={3.5} capacity="33cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:orangina')} price={3.5} capacity="33cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-tonic')} price={3.5} capacity="20cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:ice-tea')} price={3.5} capacity="20cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-agrumes')} price={3.5} capacity="20cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:syrups')} price={2.5} capacity="20cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:diabolo')} price={2.8} capacity="25cl" />
+          <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:nectar')} ing={t('menu:nectar-ing')} price={3.5} capacity="20cl" />
+          <MenuSubSection title={t('menu:hot-drink')} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:coffee')} price={2.1} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:coffee-cream')} price={2.2} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:grand-coffee')} price={2.9} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:grand-coffee-cream')} price={3} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:coffee-chantilly')} price={3.5} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:infusion')} ing={t('menu:infusion-ing')} price={2.9} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:irish-coffee')} price={8} />
+          <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:italian-coffee')} price={8} />
+        </MenuSection> */}
       </Body>
       <Footer />
     </>
@@ -127,6 +292,84 @@ const MenuTitle = styled.div`
   text-transform: uppercase;
   @media (max-width: 600px) {
     font-size: 4em;
+  }
+`;
+
+const PitcherWine = (props) => {
+  const { wines } = props;
+  const classes = useStyles();
+
+  return (
+    <>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>&nbsp;</StyledTableCell>
+              <StyledTableCell>Verre (12cl)</StyledTableCell>
+              <StyledTableCell>25cl</StyledTableCell>
+              <StyledTableCell>50cl</StyledTableCell>
+              <StyledTableCell>75cl</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {wines.map(wine => {
+              return (
+                <StyledTableRow key={_uniqueId('array-line-')}>
+                  <StyledTableCell>{wine.name}</StyledTableCell>
+                  <StyledTableCell>{wine.prices[0] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[0]) : ' '}</StyledTableCell>
+                  <StyledTableCell>{wine.prices[1] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[1]) : ' '}</StyledTableCell>
+                  <StyledTableCell>{wine.prices[2] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[2]) : ' '}</StyledTableCell>
+                  <StyledTableCell>{wine.prices[3] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[3]) : ' '}</StyledTableCell>
+                </StyledTableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <SwipeLeft>
+        <table>
+          <tbody>
+            <tr>
+              <td><ArrowBack style={{ fontSize: 40 }} /></td>
+              <td>Faites glisser vers la gauche pour voir le reste du tableau</td>
+            </tr>
+          </tbody>
+        </table>
+      </SwipeLeft>
+    </>
+  );
+};
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 414,
+  },
+});
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+
+const SwipeLeft = styled.div`
+  visibility: hidden;
+  @media (max-width: 600px) {
+    visibility: visible;
+    margin: 10px 0px;
   }
 `;
 
