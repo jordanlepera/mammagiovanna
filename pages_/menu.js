@@ -95,21 +95,43 @@ const Menu = () => {
           <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:salade')} ing={t('menu:salade-ing')} price={3.5} />
         </MenuSection>
         <MenuSection title={t('menu:planchette-apero')}>
-          {t('menu:3-persons')}
-          {t('menu:planchette-apero-ing-a')}
-          {t('menu:planchette-apero-ing-b')}
+          <TextSection>
+            {t('menu:3-persons')}
+            <br />
+            {t('menu:planchette-apero-ing-a')}
+            <br />
+            {t('menu:planchette-apero-ing-b')}
+            <br />
+            <Price>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(10)}
+            </Price>
+          </TextSection>
         </MenuSection>
         <MenuSection title={t('menu:menu-piccolo')}>
-          {t('menu:until-10yo')}
-          {t('menu:baby-pizza')}
-          {t('menu:or')}
-          {t('menu:baby-pasta')}
-          {t('menu:or')}
-          {t('menu:ham-french-frie')}
-          {t('menu:+1-ice-cream-ball')}
+          <TextSection>
+            {t('menu:until-10yo')}
+            <br />
+            {t('menu:baby-pizza')}
+            <br />
+            {t('menu:or')}
+            <br />
+            {t('menu:baby-pasta')}
+            <br />
+            {t('menu:or')}
+            <br />
+            {t('menu:ham-french-frie')}
+            <br />
+            {t('menu:+1-ice-cream-ball')}
+            <br />
+            <Price>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(8)}
+            </Price>
+          </TextSection>
         </MenuSection>
         <MenuSection title={t('suggestion')}>
-          {t('menu:suggestion-ing')}
+          <TextSection>
+            {t('menu:suggestion-ing')}
+          </TextSection>
         </MenuSection>
         <MenuSection title={t('menu:pasta')}>
           <MenuArticle key={_uniqueId('pasta-')} name={t('menu:pasta-kind')} price={12.9}>
@@ -281,6 +303,30 @@ const Section = styled.div`
   background-color: tomato;
   padding: 30px;
   border: 3px solid lightcoral;
+`;
+
+const TextSection = styled.div`
+  font-size: 2em;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+  @media (min-width: 601px) and (max-width: 1199px) {
+    font-size: 1.5em;
+  }
+`;
+
+const Price = styled.div`
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+  @media (max-width: 1024px) and (min-width: 600px) {
+    font-size: 1.5em;
+  }
 `;
 
 const MenuTitle = styled.div`
