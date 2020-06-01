@@ -412,6 +412,7 @@ const SectionTitle = styled(Typography)`
   color: #3D3D3D;
   margin: 0 10px;
   font-weight: 600;
+  font-size: 2.5em;
   @media (max-width: 600px) {
     font-size: 1.5em;
   }
