@@ -58,6 +58,7 @@ const Capacity = styled.div`
   border-bottom: 1px solid #3D3D3D;
   align-self: flex-end;
   font-size: 2em;
+  padding-left: 20px;
   @media (max-width: 600px) {
     font-size: 1em;
   }
@@ -88,7 +89,6 @@ const Price = styled.div`
 `;
 
 const Description = styled.div`
-  /* font-style: italic; */
   font-size: 1.5em;
   font-weight: 300;
   margin-top: 8px;
@@ -117,7 +117,6 @@ MenuArticle.propTypes = {
   ing: PropTypes.string,
   price: PropTypes.number,
   capacity: PropTypes.string,
-  // isHomemade: PropTypes.bool,
   children: PropTypes.node
 };
 

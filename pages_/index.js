@@ -3,7 +3,6 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import useTranslation from 'next-translate/useTranslation';
-import Link from 'next-translate/Link';
 import HomePanel from '../components/HomePanel';
 import Header from '../components/Header';
 import Body from '../components/Body';
@@ -28,31 +27,30 @@ const Homepage = () => {
               <Section>
                 <Emoji>⚠️</Emoji><br />
                 {t('common:dear-customers')},<br /><br />
-                {t('common:new-hours')}.<br />
-                {t('common:take-away')}.<br />
-                {t('common:check-menu')} <Link href="/menu"><a>{t('common:here')}</a></Link>.<br />
-                {t('common:thanks')} !<br />
-                <Emoji>😋🍕</Emoji><br /><br />
-                {t('common:the-board')}.
+                {t('common:reopening')}.<br />
+                {t('common:reservation')} <br />
+                {t('common:thanks-support')}<br />
+                <Emoji>😇</Emoji><br />
+                {t('common:see-u')}<br />
               </Section>
             </Grid>
             <Grid container justify="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
                 <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>
-                  {/* {t('opening-days')}
+                  {t('common:opening-days')}
                   <br />
-                  {t('lunch-hours')}
+                  {t('common:lunch-hours')}
                   <br />
-                  {t('dinner-hours')}
+                  {t('common:dinner-hours')}
                   <br />
-                  {t('closed')} */}
-                  {t('common:opening-days-covid')}
+                  {t('common:closed')}
+                  {/* {t('common:opening-days-covid')}
                   <br />
                   {t('common:opening-hours-covid')}
                   <br />
                   {t('common:closed-covid')}
                   <br />
-                  {t('common:closed-covid-2')}
+                  {t('common:closed-covid-2')} */}
                 </HomePanel>
               </GridCellWithRightBorder>
               <Grid item xs={10} md={6}>

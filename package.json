@@ -10,9 +10,10 @@
     "dev": "next-translate && next dev",
     "build": "next-translate && next build",
     "start": "next start",
+    "serve": "next-translate && next build && next export && npx serve out",
     "export": "next export",
     "deploy": "next-translate && next build && next export && cd out && firebase deploy && cd ..",
-    "clean-deploy": "rm -rf out"
+    "clean": "rm -rf pages out"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
