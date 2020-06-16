@@ -23,7 +23,7 @@ const Homepage = () => {
       <Body>
         <HomeContent>
           <Grid container justify="center">
-            <Grid container justify="center" alignItems="center">
+            {/* <Grid container justify="center" alignItems="center">
               <Section>
                 <Emoji>⚠️</Emoji><br />
                 {t('common:dear-customers')},<br /><br />
@@ -33,7 +33,7 @@ const Homepage = () => {
                 <Emoji>😇</Emoji><br />
                 {t('common:see-u')}<br />
               </Section>
-            </Grid>
+            </Grid> */}
             <Grid container justify="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
                 <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>

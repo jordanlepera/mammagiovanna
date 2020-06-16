@@ -80,7 +80,7 @@ const Menu = () => {
       <Header lang={lang.toString()} />
       <Body>
         <MenuTitle>{t('common:menu')}</MenuTitle>
-        <Section>
+        {/* <Section>
           <Emoji>⚠️</Emoji><br />
           {t('common:dear-customers')},<br /><br />
           {t('common:reopening')}.<br />
@@ -88,7 +88,7 @@ const Menu = () => {
           {t('common:thanks-support')}<br />
           <Emoji>😇</Emoji><br />
           {t('common:see-u')}<br />
-        </Section>
+        </Section> */}
         <ExpansionPanel style={{ width: '90%', margin: '16px 5%' }}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
