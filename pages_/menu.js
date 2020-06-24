@@ -207,7 +207,7 @@ const Menu = () => {
           <ExpansionPanelDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:risotto-gamberi')} ing={t('menu:risotto-gamberi-ing')} price={18.5} />
             <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-romana')} ing={t('menu:gnocchi-romana-ing')} price={15} />
-            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-peperoni')} ing={t('menu:tagliatelle-pesto-peperoni-ing')} price={14.5} />
+            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-burrata')} ing={t('menu:tagliatelle-pesto-burrata-ing')} price={14.5} />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel style={{ width: '90%', margin: '16px 5%' }}>
