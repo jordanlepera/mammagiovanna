@@ -10,7 +10,6 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "serve ./out",
-    "export": "next export",
     "clean": "rm -rf out"
   },
   "dependencies": {
