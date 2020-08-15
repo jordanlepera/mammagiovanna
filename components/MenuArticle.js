@@ -14,10 +14,14 @@ const MenuArticle = props => {
         <Capacity>
           {capacity}
         </Capacity>
-        <Space />
-        <Price>
-          {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price)}
-        </Price>
+        {price ? (
+          <>
+            <Space />
+            <Price>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price)}
+            </Price>
+          </>
+        ) : ('')}
       </Line>
       <Description>
         {ing}

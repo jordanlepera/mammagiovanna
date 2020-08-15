@@ -3,17 +3,14 @@ import PropTypes from 'prop-types';
 import dynamic from "next/dynamic";
 import styled from 'styled-components';
 import _uniqueId from 'lodash/uniqueId';
-import Router from 'next-translate/Router'
-import i18nConfig from '../i18n.json';
+import { i18n } from '../i18n';
 
 //Remove use of ssr fo this component because it creates an error in the console
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
-
-const CountrySelect = props => {
-  const { lang } = props;
+const CountrySelect = () => {
 
   const languageOptions = [
     { value: 'fr', label: '🇫🇷 Français' },
@@ -23,12 +20,7 @@ const CountrySelect = props => {
   ];
 
   const handleChange = (selectedOption) => {
-    if (window.location.href.includes('menu')) {
-      Router.pushI18n({ url: '/menu', options: { lang: selectedOption.value } })
-    } else {
-      Router.pushI18n({ url: '/', options: { lang: selectedOption.value } })
-    }
-
+    i18n.changeLanguage(selectedOption.value);
   };
 
   return (
@@ -39,7 +31,7 @@ const CountrySelect = props => {
       isClearable={false}
       isSearchable={false}
       name="language"
-      value={languageOptions.find(o => o.value === lang)}
+      value={languageOptions.find(o => o.value === i18n.language)}
       options={languageOptions}
       onChange={handleChange}
     />

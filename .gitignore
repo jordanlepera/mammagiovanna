@@ -26,3 +26,6 @@ yarn-error.log*
 
 # auto generated pages from pages_
 /pages
+
+# Local Netlify folder
+.netlify

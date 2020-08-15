@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import _uniqueId from 'lodash/uniqueId';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from '../i18n';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -174,7 +174,6 @@ const FooterContainer = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   margin-bottom: 20px;
-  /* height: 150px; */
 `;
 
 const Author = styled.footer`
@@ -185,16 +184,8 @@ const Author = styled.footer`
   background-color: #4c2d19;
 `;
 
-// Footer.getInitialProps = async () => ({
-//   namespacesRequired: ['common'],
-// });
-
-// Footer.getStaticProps = async ({ lang }) => {
-//   return { props: { getStaticPropsWorks: true, lang } };
-// };
-
-// Footer.propTypes = {
-//   t: PropTypes.func.isRequired,
-// };
+Footer.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
 
 export default Footer;

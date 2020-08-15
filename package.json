@@ -1,19 +1,17 @@
 {
   "name": "mammagiovanna",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "private": true,
   "engines": {
     "node": ">=8"
   },
   "scripts": {
-    "dev": "next-translate && next dev",
-    "build": "next-translate && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "serve": "next-translate && next build && next export && npx serve out",
     "export": "next export",
-    "deploy": "next-translate && next build && next export && cd out && firebase deploy && cd ..",
-    "clean": "rm -rf pages out"
+    "clean": "rm -rf out"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -26,7 +24,8 @@
     "@zeit/next-css": "^1.0.1",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "clsx": "^1.0.4",
-    "next": "9.3.5",
+    "next": "9.5.1",
+    "next-i18next": "^6.0.2",
     "next-translate": "^0.15.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
