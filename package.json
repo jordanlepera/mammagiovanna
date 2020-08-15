@@ -7,9 +7,9 @@
     "node": ">=8"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "serve ./out",
     "export": "next export",
     "clean": "rm -rf out"
   },
