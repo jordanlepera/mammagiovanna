@@ -21,6 +21,9 @@
   "opening-hours-covid": "Abendessen: 18:30 - 21:00",
   "closed-covid": "Montag, Dienstag, Mittwoch, Donnerstag, ",
   "closed-covid-2": "Freitagmittag, Samstagmittag und Sonntagmittag geschlossen",
+  "opening-days-lockdown2": "Montagmittag bis Samstagmittag von 12 bis 13.30 Uhr",
+  "opening-hours-lockdown2": "Freitagabend und Samstagabend von 18.30 bis 20.00 Uhr",
+  "closed-lockdown2": "Montagabend, Dienstagabend, Mittwochabend, Donnerstagabend und Sonntag geschlossen",
   "new-hours": "Bitte beachten Sie aufgrund der COVID 19-Epidemie die neuen Öffnungszeiten des Restaurants unten",
   "take-away": "Wir informieren Sie auch darüber, dass wir nur eine Auswahl an Pizza zum Mitnehmen machen",
   "check-menu": "Wir laden Sie ein, die Karte zu konsultieren, indem Sie oben auf der Website auf \"MENU\" klicken oder",
@@ -35,5 +38,15 @@
   "reopening": "Unser Restaurant wird am Mittwoch, den 3. Juni 2020 ab Mittag wieder geöffnet",
   "reservation": "Zögern Sie nicht, uns zu kontaktieren, um Ihre Reservierungen vorzunehmen.",
   "thanks-support": "Vielen Dank von ganzem Herzen an alle, die uns unterstützt und unsere Gerichte während der Eindämmung bestellt haben !",
-  "see-u": "Das ganze Team ist sehr ungeduldig, dich endlich wiederzusehen !"
+  "see-u": "Das ganze Team ist sehr ungeduldig, dich endlich wiederzusehen !",
+  "lockdown2-declaration": "Nach neuen staatlichen Maßnahmen ist das Restaurant ab dem 30. Oktober 2020 freitags, samstags und sonntags geöffnet und Sie können Ihre Bestellungen von 18.30 bis 21.00 Uhr abholen.",
+  "lockdown2-orders": "Bestellungen werden ab 17:00 Uhr telefonisch oder auf Wunsch per Facebook Messenger, E-Mail oder Instagram entgegengenommen.",
+  "lockdown2-ubereats": "Sie können es auch direkt zu Ihnen nach Hause liefern lassen, indem Sie es über die Uber Eats-App bestellen.",
+  "lockdown2-support": "Vielen Dank für Ihre Unterstützung in diesen schwierigen Zeiten.",
+  "lockdown2-see-u": "Das ganze Team wünscht Ihnen eine gute Verkostung und bis bald !",
+  "lockdown2-promotion": "Ab dem 3. Dezember 2020 bieten wir Ihnen für eine begrenzte Zeit tolle Rabatte auf unsere gesamte Take-out-Karte! 🎉🎉",
+  "lockdown2-carte": "Die Karte mit den Rabatten finden Sie unter dieser Nachricht auf unserer Facebook und Instagram-Seite.",
+  "lockdown2-hours": "Das Restaurant ist montags bis freitags von 12.00 bis 13.30 Uhr und freitags und samstags abends von 18.30 bis 21.00 Uhr geöffnet. Sie können Ihre Bestellungen telefonisch unter 03 89 41 24 79 oder per Instant Messaging im Facebook Messenger oder auf unserer Instagram-Seite aufgeben",
+  "lockdown2-ubereats-supp": "Es ist auch möglich, dass es über die Uber Eats-App mit zusätzlichen 30% im Vergleich zur Ermäßigung zu Ihnen nach Hause geliefert wird.",
+  "lockdown2-plaiz": "Wir hoffen, mit diesen günstigen Preisen zum Jahresende möglichst viele unserer lieben Kunden zufrieden stellen zu können!"
 }

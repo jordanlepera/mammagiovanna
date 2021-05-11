@@ -21,6 +21,9 @@
   "opening-hours-covid": "Dinner: 18h30 - 21h00",
   "closed-covid": "Closed on monday, tuesday, wednesday, thursday,",
   "closed-covid-2": "friday midday, saturday midday et sunday midday",
+  "opening-days-lockdown2": "Monday noon to Saturday noon from 12 p.m. to 1:30 p.m.",
+  "opening-hours-lockdown2": "Friday evening and Saturday evening from 6.30 p.m. to 8 p.m.",
+  "closed-lockdown2": "Closed Monday evening, Tuesday evening, Wednesday evening, Thursday evening and Sunday",
   "new-hours": "Due to the COVID-19 epidemic, please take note of the new restaurant opening hours below",
   "take-away": "We also inform you that we only make a selection of pizza to take away",
   "check-menu": "We invite you to consult the menu by clicking on \"MENU\" at the top of the website or",
@@ -35,5 +38,15 @@
   "reopening": "Our restaurant will reopen on Wednesday June 3, 2020 from midday service",
   "reservation": "Do not hesitate to contact us to make your reservations.",
   "thanks-support": "Thank you from the bottom of our hearts to all those who supported us and who ordered our dishes during lockdown !",
-  "see-u": "The whole team is very impatient to finally be able to see you again !"
+  "see-u": "The whole team is very impatient to finally be able to see you again !",
+  "lockdown2-declaration": "Following new government measures, from October 30th 2020, the restaurant will be open on Friday, Saturday and Sunday and you will be able to pick up your orders from 6.30 p.m. to 9 p.m.",
+  "lockdown2-orders": "Orders will be taken from 5:00 p.m. by phone or when you wish by Facebook Messenger, email or Instagram.",
+  "lockdown2-ubereats": "You can also have it delivered directly to your house by ordering from the Uber Eats app.",
+  "lockdown2-support": "Thank you for your support in these difficult times.",
+  "lockdown2-see-u": "The whole team wishes you a good tasting, see you very soon !",
+  "lockdown2-promotion": "We are proposing you, from December 3rd 2020 and for a limited time, great discounts on our entire take away menu ! 🎉🎉",
+  "lockdown2-carte": "The card with the discounts is available under this message, on our Facebook and Instagram page.",
+  "lockdown2-hours": "The restaurant is open Monday to Friday from 12 p.m. to 1.30 p.m. and Friday and Saturday evenings from 6.30 p.m. to 9 p.m. You can place your orders by phone on 03 89 41 24 79 or by instant messaging on Facebook Messenger or on our Instagram page.",
+  "lockdown2-ubereats-supp": "It is also possible to have it delivered to your home via the Uber Eats app at an additional cost of 30% compared to the discount.",
+  "lockdown2-plaiz": "We hope to be able to please as many of our dear customers as possible with these low prices for the end of the year !"
 }

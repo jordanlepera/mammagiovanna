@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const MenuArticle = props => {
-  const { name, ing, price, capacity } = props;
+  const { name, ing, price, discount, capacity } = props;
 
   return (
     <Article>
@@ -17,9 +17,17 @@ const MenuArticle = props => {
         {price ? (
           <>
             <Space />
-            <Price>
+            <Price discount={discount}>
               {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price)}
             </Price>
+          </>
+        ) : ('')}
+        {discount ? (
+          <>
+            <Space />
+            <Discount>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(discount)}
+            </Discount>
           </>
         ) : ('')}
       </Line>
@@ -71,12 +79,28 @@ const Capacity = styled.div`
   }
 `;
 
+const Discount = styled.div`
+  color: red;
+  font-size: 2em;
+  border-bottom: 1px solid #3D3D3D;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  align-self: flex-end;
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+  @media (max-width: 1024px) and (min-width: 600px) {
+    font-size: 1.5em;
+  }
+`;
+
 const Space = styled.span`
   width: 20px;
   border-bottom: 1px solid #3D3D3D;
 `;
 
 const Price = styled.div`
+  text-decoration: ${props => props.discount ? 'line-through' : 'none'};
   flex-grow: 1;
   border-bottom: 1px solid #3D3D3D;
   text-align: right;
@@ -120,6 +144,7 @@ MenuArticle.propTypes = {
   name: PropTypes.string,
   ing: PropTypes.string,
   price: PropTypes.number,
+  discount: PropTypes.number,
   capacity: PropTypes.string,
   children: PropTypes.node
 };

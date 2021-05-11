@@ -21,6 +21,9 @@
   "opening-hours-covid": "Cena: 18:30 - 21:00",
   "closed-covid": "Chiuso lunedì, martedì, mercoledì, giovedì,",
   "closed-covid-2": "venerdì a mezzogiorno, sabato a mezzogiorno e domenica a mezzogiorno",
+  "opening-days-lockdown2": "Da lunedì a mezzogiorno a sabato a mezzogiorno dalle 12:00 alle 13:30",
+  "opening-hours-lockdown2": "Venerdì sera e sabato sera dalle 18.30 alle 20.00",
+  "closed-lockdown2": "Chiuso lunedì sera, martedì sera, mercoledì sera, giovedì sera e domenica",
   "new-hours": "A causa dell'epidemia COVID-19, si prega di notare gli orari di apertura del nuovo ristorante di seguito",
   "take-away": "Ti informiamo inoltre che facciamo solo una selezione di pizza da asporto",
   "check-menu": "Ti invitiamo a consultare la carta facendo clic su \"CARTA\" nella parte superiore del sito o",
@@ -35,5 +38,15 @@
   "reopening": "Il nostro ristorante riaprirà mercoledì 3 giugno 2020 dal servizio di mezzogiorno",
   "reservation": "Non esitate a contattarci per effettuare la prenotazione.",
   "thanks-support": "Grazie di cuore a tutti coloro che ci hanno supportato e che hanno ordinato i nostri piatti durante il contenimento !",
-  "see-u": "Tutta la squadra è molto impaziente di potervi finalmente rivedere !"
+  "see-u": "Tutta la squadra è molto impaziente di potervi finalmente rivedere !",
+  "lockdown2-declaration": "A seguito di nuove misure governative, dal 30 ottobre 2020, il ristorante sarà aperto venerdì, sabato e domenica e potrai ritirare i tuoi ordini dalle 18.30 alle 21.00.",
+  "lockdown2-orders": "Gli ordini verranno presi dalle 17:00 per telefono o quando lo desideri tramite Facebook Messenger, email o Instagram.",
+  "lockdown2-ubereats": "Puoi anche riceverlo direttamente a casa tua ordinando dall'app Uber Eats.",
+  "lockdown2-support": "Grazie per il vostro supporto in questi tempi difficili.",
+  "lockdown2-see-u": "Tutto il team ti augura una buona degustazione e ci vediamo molto presto !",
+  "lockdown2-promotion": "Dal 3 dicembre 2020, per un periodo limitato, offriamo grandi sconti sulla nostra intera carta da asporto! 🎉🎉",
+  "lockdown2-carte": "La card con gli sconti è disponibile sotto questo messaggio e sulla nostra pagina Facebook o Instagram.",
+  "lockdown2-hours": "Il ristorante è aperto dal lunedì al venerdì dalle 12:00 alle 13:30 e il venerdì e il sabato sera dalle 18:30 alle 21:00. Puoi effettuare i tuoi ordini per telefono al numero 03 89 41 24 79 o tramite messaggistica istantanea su Facebook Messenger o sulla nostra pagina Instagram.",
+  "lockdown2-ubereats-supp": "È anche possibile averlo consegnato a casa tua tramite l'app Uber Eats con un costo extra de 30% rispetto alla reduzione.",
+  "lockdown2-plaiz": "Speriamo di poter accontentare il maggior numero possibile dei nostri cari clienti con questi prezzi bassi per la fine dell'anno !"
 }

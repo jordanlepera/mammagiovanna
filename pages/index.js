@@ -27,23 +27,24 @@ const Homepage = () => {
               <Section>
                 <Emoji>⚠️</Emoji><br />
                 {t('common:dear-customers')},<br /><br />
-                {t('common:reopening')}.<br />
-                {t('common:reservation')} <br />
-                {t('common:thanks-support')}<br />
+                {t('common:lockdown2-declaration')}<br /><br />
+                {t('common:lockdown2-orders')} <br />
+                {t('common:lockdown2-ubereats')}<br /><br />
+                {t('common:lockdown2-support')}<br />
                 <Emoji>😇</Emoji><br />
-                {t('common:see-u')}<br />
+                {t('common:lockdown2-see-u')}<br />
               </Section>
             </Grid> */}
             <Grid container justify="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
                 <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>
-                  {t('common:opening-days')}
+                  {/* {t('common:opening-days')}
                   <br />
                   {t('common:lunch-hours')}
                   <br />
                   {t('common:dinner-hours')}
                   <br />
-                  {t('common:closed')}
+                  {t('common:closed')} */}
                   {/* {t('common:opening-days-covid')}
                   <br />
                   {t('common:opening-hours-covid')}
@@ -51,6 +52,11 @@ const Homepage = () => {
                   {t('common:closed-covid')}
                   <br />
                   {t('common:closed-covid-2')} */}
+                  {t('common:opening-days-lockdown2')}
+                  <br />
+                  {t('common:opening-hours-lockdown2')}
+                  <br />
+                  {t('common:closed-lockdown2')}
                 </HomePanel>
               </GridCellWithRightBorder>
               <Grid item xs={10} md={6}>
@@ -61,7 +67,7 @@ const Homepage = () => {
                   <br />
                   (+33) 3 89 41 24 79
                   <br />
-                  contact@mammagiovanna.com
+                  <br />
                 </HomePanel>
               </Grid>
             </Grid>
@@ -89,24 +95,24 @@ const Homepage = () => {
   );
 };
 
-// const Emoji = styled.span`
-//   font-size: 3em;
-//   line-height: 1.5em;
-// `;
+const Emoji = styled.span`
+  font-size: 3em;
+  line-height: 1.5em;
+`;
 
-// const Section = styled.div`
-//   font-size: 1.5em;
-//   text-align: center;
-//   font-weight: bold;
-//   color: white;
-//   width: 90%;
-//   margin: 20px 5%;
-//   border-radius: 30px;
-//   background-color: tomato;
-//   padding: 30px;
-//   border: 3px solid lightcoral;
-//   line-height: 2em;
-// `;
+const Section = styled.div`
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  margin: 20px 5%;
+  border-radius: 30px;
+  background-color: tomato;
+  padding: 30px;
+  border: 3px solid lightcoral;
+  line-height: 2em;
+`;
 
 const GridCellWithRightBorder = styled(Grid)`
   @media (min-width: 960px) {
