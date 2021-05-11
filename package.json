@@ -10,7 +10,9 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "serve ./out",
-    "clean": "rm -rf out"
+    "clean": "rm -rf out",
+    "deploy": "yarn clean && yarn build && netlify deploy",
+    "deploy-prod": "netlify deploy --prod"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",

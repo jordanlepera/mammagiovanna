@@ -8,6 +8,7 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
+import Chip from '@material-ui/core/Chip';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
@@ -84,15 +85,17 @@ const Menu = () => {
         {/* <Section>
           <Emoji>⚠️</Emoji><br />
           {t('common:dear-customers')},<br /><br />
-          {t('common:reopening')}.<br />
-          {t('common:reservation')} <br />
-          {t('common:thanks-support')}<br />
+          {t('common:lockdown2-promotion')}<br /><br />
+          {t('common:lockdown2-carte')} <br /><br />
+          {t('common:lockdown2-hours')} <br />
+          {t('common:lockdown2-ubereats-supp')}<br /><br />
+          {t('common:lockdown2-plaiz')}<br />
           <Emoji>😇</Emoji><br />
-          {t('common:see-u')}<br />
+          {t('common:lockdown2-see-u')}<br />
         </Section> */}
-        <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+        {/* <Accordion style={{ width: '90%', margin: '16px 5%' }}>
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -105,8 +108,8 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -127,8 +130,8 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -157,8 +160,8 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -169,21 +172,38 @@ const Menu = () => {
               {t('menu:suggestion-ing')}
             </TextSection>
           </AccordionDetails>
-        </Accordion>
+        </Accordion> */}
+        {/* <Accordion style={{ width: '90%', margin: '16px 5%' }}>
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <SectionTitle>{t('menu:formula')}<CustomChip label={t('menu:new')} color="primary" /></SectionTitle>
+          </CustomAccordionSummary>
+          <AccordionDetails style={{ display: 'block' }}>
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:pasta-dessert')} price={19.7} discount={10} />
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:pizza-dessert')} price={21.8} discount={12} />
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:pasta-dessert-drink')} price={23.2} discount={12} />
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:pizza-dessert-boisson')} price={25.3} discount={14} />
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:hamburger-fries-drink')} price={18} discount={13} />
+            <MenuArticle key={(_uniqueId('formula-'))} name={t('menu:hamburger-fries-drink-dessert')} price={21.5} discount={15} />
+          </AccordionDetails>
+        </Accordion> */}
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:pasta')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('pasta-')} name={t('menu:pasta-kind')} price={12.9}>
               {t('menu:pasta-sauce')}:
               <i>
-                <br />
-                {t('menu:arrabbiata')}
+                {/* <br />
+                {t('menu:arrabbiata')} */}
                 <br />
                 {t('menu:bolognese')}
                 <br />
@@ -196,45 +216,48 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:italian-speciality')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:risotto-gamberi')} ing={t('menu:risotto-gamberi-ing')} price={18.5} />
-            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-romana')} ing={t('menu:gnocchi-romana-ing')} price={15} />
+            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:risotto-truffe')} ing={t('menu:risotto-truffe-ing')} price={18.5} />
+            {/* <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:lasagna')} ing={t('menu:lasagna-ing')} price={14} /> */}
+            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-melanzane')} ing={t('menu:gnocchi-melanzane-ing')} price={14.5} />
+            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-gorgonzola')} ing={t('menu:gnocchi-gorgonzola-ing')} price={14.5} />
             <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-burrata')} ing={t('menu:tagliatelle-pesto-burrata-ing')} price={14.5} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:meat-fish')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={18} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:fish-day')} ing={t('menu:fish-day-ing')} price={18} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={22} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno')} ing={t('menu:steak-forno-ing')} price={21} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno-vitello')} ing={t('menu:steak-forno-vitello-ing')} price={21} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:milanese')} ing={t('menu:milanese-ing')} price={21} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-crema')} ing={t('menu:scaloppa-crema-ing')} price={21} />
+            {/*<MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-crema')} ing={t('menu:scaloppa-crema-ing')} price={21} /> */}
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={19.5} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:hamburger')} ing={t('menu:hamburger-ing')} price={14.5} />
+            {/* <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:hamburger')} ing={t('menu:hamburger-ing')} price={14.5} /> */}
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:dessert')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={6.8} />
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mousse')} ing={t('menu:mousse-ing')} price={6.8} />
@@ -253,18 +276,19 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:pizza')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4formaggi')} ing={t('menu:4formaggi-ing')} price={12.5} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak')} ing={t('menu:pizza-steak-ing')} price={15} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={15} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={12.8} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak-vitello')} ing={t('menu:pizza-steak-vitello-ing')} price={15} />
+            {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={15} /> */}
+            {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={12.8} /> */}
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:diavola')} ing={t('menu:diavola-ing')} price={12.8} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={12.5} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:mamma-giovanna')} ing={t('menu:mamma-giovanna-ing')} price={13.5} />
@@ -282,28 +306,28 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:white-pizza')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:burratina')} ing={t('menu:burratina-ing')} price={15.9} />
-            <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:al-salmone')} ing={t('menu:al-salmone-ing')} price={15} />
+            {/* <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:al-salmone')} ing={t('menu:al-salmone-ing')} price={15} /> */}
             <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={12.8} />
             <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:white-bufala')} ing={t('menu:white-bufala-ing')} price={13.5} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:italian-wine')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuSubSection title={t('menu:red-wine')} />
             <MenuArticle key={(_uniqueId('red-wine-'))} name={'Lambrusco DOC'} capacity="75cl" price={15.9} />
@@ -325,13 +349,13 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:french-wine')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuSubSection title={t('menu:selection-wine')} />
             <MenuArticle key={(_uniqueId('selection-wine-'))} name={'Bordeaux Saint-Emilion AOC'} capacity="37,5cl" price={16.5} />
@@ -344,13 +368,13 @@ const Menu = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+          <CustomAccordionSummary
+            expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:drink')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuSubSection title={t('menu:aperitif')} />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:aperitif-maison')} price={4.9} capacity="12cl" />
@@ -398,9 +422,11 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:coca')} price={3.5} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:orangina')} price={3.5} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-tonic')} price={3.5} capacity="20cl" />
-            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:ice-tea')} price={3.5} capacity="20cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:ice-tea')} price={3.5} capacity="33cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:cristalline')} price={2.9} capacity="50cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:moretti')} price={4.5} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-agrumes')} price={3.5} capacity="20cl" />
-            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:syrups')} price={2.5} capacity="20cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:syrups')} price={2.5} capacity="25cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:diabolo')} price={2.8} capacity="25cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:nectar')} ing={t('menu:nectar-ing')} price={3.5} capacity="20cl" />
             <MenuSubSection title={t('menu:hot-drink')} />
@@ -414,13 +440,25 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('hot-drink-')} name={t('menu:italian-coffee')} price={8} />
           </AccordionDetails>
         </Accordion>
-        <ImportantNote>{t('menu:suppl-couvert')}</ImportantNote>
+        {/* <ImportantNote>{t('menu:suppl-couvert')}</ImportantNote> */}
         <LegalMention>{t('menu:mention')}</LegalMention>
       </Body>
       <Footer />
     </>
   );
 };
+
+const ExpandIcon = styled(ExpandMoreIcon)`
+  color: white;
+`
+
+const CustomAccordionSummary = styled(AccordionSummary)`
+  background-color: #918063;
+`;
+
+const CustomChip = styled(Chip)`
+  margin-left: 10px;
+`
 
 const ImportantNote = styled.div`
   margin: 40px;
@@ -438,7 +476,7 @@ const LegalMention = styled.div`
 
 const SectionTitle = styled(Typography)`
   width: 100%;
-  color: #3D3D3D;
+  color: white;
   margin: 0 10px;
   font-weight: 600;
   font-size: 2.5em;
@@ -450,22 +488,22 @@ const SectionTitle = styled(Typography)`
   }
 `;
 
-// const Emoji = styled.span`
-//   font-size: 3em;
-// `;
+const Emoji = styled.span`
+  font-size: 3em;
+`;
 
-// const Section = styled.div`
-//   font-size: 1.5em;
-//   text-align: center;
-//   font-weight: bold;
-//   color: white;
-//   width: 90%;
-//   margin: 20px 5%;
-//   border-radius: 30px;
-//   background-color: tomato;
-//   padding: 30px;
-//   border: 3px solid lightcoral;
-// `;
+const Section = styled.div`
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  margin: 20px 5%;
+  border-radius: 30px;
+  background-color: tomato;
+  padding: 30px;
+  border: 3px solid lightcoral;
+`;
 
 const TextSection = styled.div`
   font-size: 2em;
