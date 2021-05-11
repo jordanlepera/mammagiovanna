@@ -93,16 +93,16 @@ const Menu = () => {
           <Emoji>😇</Emoji><br />
           {t('common:lockdown2-see-u')}<br />
         </Section> */}
-        {/* <Accordion style={{ width: '90%', margin: '16px 5%' }}>
+        <Accordion style={{ width: '90%', margin: '16px 5%' }}>
           <CustomAccordionSummary
             expandIcon={<ExpandIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:our-salade')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:vitello')} ing={t('menu:vitello-ing')} price={13.5} />
+            <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:bresaola')} ing={t('menu:bresaola-ing')} price={13.5} />
             <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:etoile-chef')} ing={t('menu:etoile-chef-ing')} price={14.9} />
             <MenuArticle key={_uniqueId('our-salade-')} name={t('menu:salade')} price={3.5} />
           </AccordionDetails>
@@ -114,7 +114,7 @@ const Menu = () => {
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:planchette-apero')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <TextSection>
               {t('menu:3-persons')}
@@ -136,7 +136,7 @@ const Menu = () => {
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:menu-piccolo')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <TextSection>
               {t('menu:until-10yo')}
@@ -166,13 +166,13 @@ const Menu = () => {
             id="panel1a-header"
           >
             <SectionTitle>{t('menu:suggestion')}</SectionTitle>
-          </AccordionSummary>
+          </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <TextSection>
               {t('menu:suggestion-ing')}
             </TextSection>
           </AccordionDetails>
-        </Accordion> */}
+        </Accordion>
         {/* <Accordion style={{ width: '90%', margin: '16px 5%' }}>
           <CustomAccordionSummary
             expandIcon={<ExpandIcon />}
