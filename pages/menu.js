@@ -384,8 +384,8 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:alsacian-kir')} price={3.9} capacity="12cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:picon')} price={3.9} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:suze')} price={3.9} capacity="4cl" />
-            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:heineken')} price={3.6} capacity="25cl" />
-            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:heineken')} price={6.5} capacity="50cl" />
+            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={3.5} capacity="25cl" />
+            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={6.5} capacity="50cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={3.9} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={6.9} capacity="50cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:amer')} price={3.9} capacity="25cl" />
