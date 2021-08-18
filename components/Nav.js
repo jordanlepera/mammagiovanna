@@ -1,17 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import _uniqueId from 'lodash/uniqueId';
-import useTranslation from 'next-translate/useTranslation';
-import Router from 'next-translate/Router';
-// import { Link, withTranslation } from '../i18n';
+import { i18n, useTranslation, Link } from '../i18n';
 import SelectCountry from './CountrySelect';
 
-const Nav = props => {
-  const { lang } = props;
+const Nav = () => {
   const { t } = useTranslation();
 
   const links = [
@@ -25,15 +21,10 @@ const Nav = props => {
     }
   ];
 
-  const routeTo = (url, lang) => {
-    // console.log(lang);
-    Router.pushI18n({ url: url, options: { lang: lang } });
-    window.scrollTo(0, 0);
-    // console.log(lang);
-  };
-
   const Navlink = () => links.map(link => (
-    <NavLink disableRipple key={_uniqueId('navlink-')} onClick={() => routeTo(link.url, lang)}>{link.title} </NavLink>
+    <Link href={link.url} key={_uniqueId('navlink-')}>
+      <NavLink disableRipple>{link.title}</NavLink>
+    </Link>
   ));
 
   return (
@@ -44,24 +35,16 @@ const Nav = props => {
           <NavlinkContainer>
             <Navlink />
           </NavlinkContainer>
-          <SelectCountry lang={lang} />
+          <SelectCountry lang={i18n.language} />
         </NavToolbar>
       </NavBar>
     </>
   );
 };
 
-// Nav.getInitialProps = async () => ({
-//   namespacesRequired: ['common'],
-// });
-
-// Nav.getStaticProps = async ({ lang }) => {
-//   return { props: { getStaticPropsWorks: true, lang } };
-// };
-
-Nav.propTypes = {
-  lang: PropTypes.string,
-};
+Nav.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
 
 const NavlinkContainer = styled.div`
   flex-grow: 1;

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const MenuSection = props => {
-  const { name, ing, price } = props;
+const MenuArticle = props => {
+  const { name, ing, price, discount, capacity } = props;
 
   return (
     <Article>
@@ -11,10 +11,25 @@ const MenuSection = props => {
         <Name>
           {name}
         </Name>
-        <Space />
-        <Price>
-          {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price)}
-        </Price>
+        <Capacity>
+          {capacity}
+        </Capacity>
+        {price ? (
+          <>
+            <Space />
+            <Price discount={discount}>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price)}
+            </Price>
+          </>
+        ) : ('')}
+        {discount ? (
+          <>
+            <Space />
+            <Discount>
+              {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(discount)}
+            </Discount>
+          </>
+        ) : ('')}
       </Line>
       <Description>
         {ing}
@@ -40,13 +55,41 @@ const Line = styled.div`
 
 const Name = styled.div`
   font-size: 2em;
-  /* font-family: 'Raleway', sans-serif; */
   font-weight: 800;
   border-bottom: 1px solid #3D3D3D;
-  @media (max-width: 600px) {
-    font-size: 1.25em;
+  @media (max-width: 599px) {
+    font-size: 1em;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (min-width: 600px) {
+    font-size: 1.5em;
+  }
+`;
+
+const Capacity = styled.div`
+  flex-grow: 1;
+  border-bottom: 1px solid #3D3D3D;
+  align-self: flex-end;
+  font-size: 2em;
+  padding-left: 20px;
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+  @media (max-width: 1024px) and (min-width: 600px) {
+    font-size: 1.5em;
+  }
+`;
+
+const Discount = styled.div`
+  color: red;
+  font-size: 2em;
+  border-bottom: 1px solid #3D3D3D;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  align-self: flex-end;
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
+  @media (max-width: 1024px) and (min-width: 600px) {
     font-size: 1.5em;
   }
 `;
@@ -57,6 +100,7 @@ const Space = styled.span`
 `;
 
 const Price = styled.div`
+  text-decoration: ${props => props.discount ? 'line-through' : 'none'};
   flex-grow: 1;
   border-bottom: 1px solid #3D3D3D;
   text-align: right;
@@ -65,22 +109,21 @@ const Price = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   @media (max-width: 600px) {
-    font-size: 1.25em;
+    font-size: 1em;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (min-width: 600px) {
     font-size: 1.5em;
   }
 `;
 
 const Description = styled.div`
-  /* font-style: italic; */
   font-size: 1.5em;
   font-weight: 300;
   margin-top: 8px;
   @media (max-width: 600px) {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (min-width: 600px) {
     font-size: 1.3em;
   }
 `;
@@ -90,18 +133,20 @@ const CustomSection = styled.div`
   font-weight: 300;
   margin-top: 10px;
   @media (max-width: 600px) {
-    font-size: 1.1em;
+    font-size: 1em;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (min-width: 600px) {
     font-size: 1.3em;
   }
 `;
 
-MenuSection.propTypes = {
+MenuArticle.propTypes = {
   name: PropTypes.string,
   ing: PropTypes.string,
   price: PropTypes.number,
+  discount: PropTypes.number,
+  capacity: PropTypes.string,
   children: PropTypes.node
 };
 
-export default MenuSection;
+export default MenuArticle;

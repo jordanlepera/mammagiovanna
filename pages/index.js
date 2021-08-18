@@ -2,8 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
-import useTranslation from 'next-translate/useTranslation';
-import Link from 'next-translate/Link';
+import { i18n, useTranslation } from '../i18n';
 import HomePanel from '../components/HomePanel';
 import Header from '../components/Header';
 import Body from '../components/Body';
@@ -13,46 +12,51 @@ import { faFacebookF, faInstagram, faGoogle, faTripadvisor } from '@fortawesome/
 import { faClock, faAddressCard } from '@fortawesome/free-regular-svg-icons';
 
 const Homepage = () => {
-  const { t, lang } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
       <Head>
         <title>{t('common:homepage')} - {t('common:restaurant')}</title>
       </Head>
-      <Header lang={lang} />
+      <Header lang={i18n.language} />
       <Body>
         <HomeContent>
           <Grid container justify="center">
-            <Grid container justify="center" alignItems="center">
+            {/* <Grid container justify="center" alignItems="center">
               <Section>
                 <Emoji>⚠️</Emoji><br />
                 {t('common:dear-customers')},<br /><br />
-                {t('common:new-hours')}.<br />
-                {t('common:take-away')}.<br />
-                {t('common:check-menu')} <Link href="/menu"><a>{t('common:here')}</a></Link>.<br />
-                {t('common:thanks')} !<br />
-                <Emoji>😋🍕</Emoji><br /><br />
-                {t('common:the-board')}.
+                {t('common:lockdown2-declaration')}<br /><br />
+                {t('common:lockdown2-orders')} <br />
+                {t('common:lockdown2-ubereats')}<br /><br />
+                {t('common:lockdown2-support')}<br />
+                <Emoji>😇</Emoji><br />
+                {t('common:lockdown2-see-u')}<br />
               </Section>
-            </Grid>
+            </Grid> */}
             <Grid container justify="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
                 <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>
-                  {/* {t('opening-days')}
+                  {t('common:opening-days')}
                   <br />
-                  {t('lunch-hours')}
+                  {t('common:lunch-hours')}
                   <br />
-                  {t('dinner-hours')}
+                  {t('common:dinner-hours')}
                   <br />
-                  {t('closed')} */}
-                  {t('common:opening-days-covid')}
+                  {t('common:closed')}
+                  {/* {t('common:opening-days-covid')}
                   <br />
                   {t('common:opening-hours-covid')}
                   <br />
                   {t('common:closed-covid')}
                   <br />
-                  {t('common:closed-covid-2')}
+                  {t('common:closed-covid-2')} */}
+                  {/*t('common:opening-days-lockdown2')}
+                  <br />
+                  {t('common:opening-hours-lockdown2')}
+                  <br />
+                  {t('common:closed-lockdown2')*/}
                 </HomePanel>
               </GridCellWithRightBorder>
               <Grid item xs={10} md={6}>
@@ -63,7 +67,7 @@ const Homepage = () => {
                   <br />
                   (+33) 3 89 41 24 79
                   <br />
-                  contact@mammagiovanna.com
+                  <br />
                 </HomePanel>
               </Grid>
             </Grid>
@@ -140,5 +144,10 @@ const SocialIcon = styled(FontAwesomeIcon)`
     margin: 40px 65px;
   }
 `;
+
+Homepage.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
+
 
 export default Homepage;

@@ -1,12 +1,12 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../components/theme';
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="fr">
+      <Html lang="fr">
         <Head>
           <base href="./" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -15,12 +15,12 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#FFFAEE" />
-          <meta name="description" content="Restaurant Mamma Giovanna à Colmar. Venez déguster nos délicieuses pizzas et nos authentiques spécialités italiennes."></meta>
+          <meta name="description" content="Restaurant Mamma Giovanna à Colmar. Venez déguster nos délicieuses pizzas et nos authentiques spécialités italiennes au coeur du centre historique de Colmar ! Tous nos plats sont faits maison, voyage en Italie garanti !"></meta>
           <meta charSet="utf-8" />
-          <meta
+          {/* <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-          />
+          /> */}
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>
@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
@@ -66,14 +66,14 @@ MyDocument.getInitialProps = async ctx => {
     });
 
   // Step 3: Extract the styles as <style> tags
-  const styleTags = sheets.getStyleElement();
+  // const styleTags = sheets.getStyleElement();
 
   const initialProps = await Document.getInitialProps(ctx);
 
   return {
     ...initialProps,
-    styleTags
+    // styleTags
     // Styles fragment is rendered after the app and page rendering finish.
-    // styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };

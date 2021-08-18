@@ -7,6 +7,7 @@ import theme from '../components/theme';
 import GlobalFonts from '../components/Font';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
+import { appWithTranslation } from '../i18n';
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 
@@ -80,4 +81,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
