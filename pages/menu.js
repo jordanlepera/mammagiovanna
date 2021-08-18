@@ -40,7 +40,7 @@ const pitcherWines = [
   },
   {
     'name': 'Sélection du chef',
-    'prices': [4.4, 8.2, 16, 24]
+    'prices': [4.9, 9.2, 17, 26]
   }
 ];
 
@@ -240,7 +240,7 @@ const Menu = () => {
             <SectionTitle>{t('menu:meat-fish')}</SectionTitle>
           </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:fish-day')} ing={t('menu:fish-day-ing')} price={18} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={18} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={22} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno')} ing={t('menu:steak-forno-ing')} price={21} />
             <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno-vitello')} ing={t('menu:steak-forno-vitello-ing')} price={21} />
@@ -387,7 +387,7 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={3.5} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={6.5} capacity="50cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={3.9} capacity="25cl" />
-            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={6.9} capacity="50cl" />
+            <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={7.5} capacity="50cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:amer')} price={3.9} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:martini')} price={3.9} capacity="4cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:porto')} price={3.9} capacity="4cl" />

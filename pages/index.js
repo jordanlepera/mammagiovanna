@@ -38,13 +38,13 @@ const Homepage = () => {
             <Grid container justify="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
                 <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>
-                  {/* {t('common:opening-days')}
+                  {t('common:opening-days')}
                   <br />
                   {t('common:lunch-hours')}
                   <br />
                   {t('common:dinner-hours')}
                   <br />
-                  {t('common:closed')} */}
+                  {t('common:closed')}
                   {/* {t('common:opening-days-covid')}
                   <br />
                   {t('common:opening-hours-covid')}
@@ -52,11 +52,11 @@ const Homepage = () => {
                   {t('common:closed-covid')}
                   <br />
                   {t('common:closed-covid-2')} */}
-                  {t('common:opening-days-lockdown2')}
+                  {/*t('common:opening-days-lockdown2')}
                   <br />
                   {t('common:opening-hours-lockdown2')}
                   <br />
-                  {t('common:closed-lockdown2')}
+                  {t('common:closed-lockdown2')*/}
                 </HomePanel>
               </GridCellWithRightBorder>
               <Grid item xs={10} md={6}>
