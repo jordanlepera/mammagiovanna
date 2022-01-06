@@ -124,7 +124,7 @@ const Menu = () => {
               {t('menu:planchette-apero-ing-b')}
               <br />
               <Price>
-                {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(10)}
+                {new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(12)}
               </Price>
             </TextSection>
           </AccordionDetails>
@@ -228,7 +228,7 @@ const Menu = () => {
             {/* <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:lasagna')} ing={t('menu:lasagna-ing')} price={14} /> */}
             <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-melanzane')} ing={t('menu:gnocchi-melanzane-ing')} price={14.5} />
             <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:gnocchi-gorgonzola')} ing={t('menu:gnocchi-gorgonzola-ing')} price={14.5} />
-            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-burrata')} ing={t('menu:tagliatelle-pesto-burrata-ing')} price={14.5} />
+            <MenuArticle key={_uniqueId('italian-speciality-')} name={t('menu:tagliatelle-pesto-burrata')} ing={t('menu:tagliatelle-pesto-burrata-ing')} price={14.9} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
@@ -240,13 +240,13 @@ const Menu = () => {
             <SectionTitle>{t('menu:meat-fish')}</SectionTitle>
           </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={18} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={22} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno')} ing={t('menu:steak-forno-ing')} price={21} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno-vitello')} ing={t('menu:steak-forno-vitello-ing')} price={21} />
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:milanese')} ing={t('menu:milanese-ing')} price={21} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:salmon')} ing={t('menu:salmon-ing')} price={19} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-valdostana')} ing={t('menu:scaloppa-valdostana-ing')} price={23} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno')} ing={t('menu:steak-forno-ing')} price={22} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:steak-forno-vitello')} ing={t('menu:steak-forno-vitello-ing')} price={22} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:milanese')} ing={t('menu:milanese-ing')} price={22} />
             {/*<MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:scaloppa-crema')} ing={t('menu:scaloppa-crema-ing')} price={21} /> */}
-            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={19.5} />
+            <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:beef')} ing={t('menu:beef-ing')} price={21} />
             {/* <MenuArticle key={_uniqueId('meat-fish-')} name={t('menu:hamburger')} ing={t('menu:hamburger-ing')} price={14.5} /> */}
           </AccordionDetails>
         </Accordion>
@@ -259,20 +259,20 @@ const Menu = () => {
             <SectionTitle>{t('menu:dessert')}</SectionTitle>
           </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={6.8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mousse')} ing={t('menu:mousse-ing')} price={6.8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={6.8} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={7.2} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mousse')} ing={t('menu:mousse-ing')} price={7.2} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={7.2} />
             <SectionTitle>{t('menu:our-ice-cream')}</SectionTitle><br />
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:ice-cream-flavor')} ing={t('menu:ice-cream-flavor-ing')} />
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:1-scoop')} price={2.5} />
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:2-scoop')} price={4.5} />
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:3-scoop')} price={6.0} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:dame-blanche')} ing={t('menu:dame-blanche-ing')} price={6.8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:chocolat-liegeois')} ing={t('menu:chocolat-liegeois-ing')} price={6.8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:cafe-liegeois')} ing={t('menu:cafe-liegeois-ing')} price={6.8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:amarena')} ing={t('menu:amarena-ing')} price={7} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mojito')} ing={t('menu:mojito-ing')} price={8} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbet-arrose')} price={8} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:dame-blanche')} ing={t('menu:dame-blanche-ing')} price={7} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:chocolat-liegeois')} ing={t('menu:chocolat-liegeois-ing')} price={7} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:cafe-liegeois')} ing={t('menu:cafe-liegeois-ing')} price={7} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:amarena')} ing={t('menu:amarena-ing')} price={7.5} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mojito')} ing={t('menu:mojito-ing')} price={8.5} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbet-arrose')} price={8.5} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
@@ -284,25 +284,25 @@ const Menu = () => {
             <SectionTitle>{t('menu:pizza')}</SectionTitle>
           </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4formaggi')} ing={t('menu:4formaggi-ing')} price={12.5} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4formaggi')} ing={t('menu:4formaggi-ing')} price={12.9} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak')} ing={t('menu:pizza-steak-ing')} price={15} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:pizza-steak-vitello')} ing={t('menu:pizza-steak-vitello-ing')} price={15} />
             {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={15} /> */}
             {/* <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={12.8} /> */}
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:diavola')} ing={t('menu:diavola-ing')} price={12.8} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:mamma-giovanna')} ing={t('menu:mamma-giovanna-ing')} price={13.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:hawaiana')} ing={t('menu:hawaiana-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:fiorentina')} ing={t('menu:fiorentina-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:capriciosa')} ing={t('menu:capriciosa-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:margherita')} ing={t('menu:margherita-ing')} price={10.7} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4stagioni')} ing={t('menu:4stagioni-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:bufala')} ing={t('menu:bufala-ing')} price={13.8} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:napoletana')} ing={t('menu:napoletana-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:vegetariana')} ing={t('menu:vegetariana-ing')} price={12.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:1000gusti')} ing={t('menu:1000gusti-ing')} price={12.8} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:parmigiana')} ing={t('menu:parmigiana-ing')} price={12.8} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:calzone')} ing={t('menu:calzone-ing')} price={12.8} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:diavola')} ing={t('menu:diavola-ing')} price={13.3} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:mamma-giovanna')} ing={t('menu:mamma-giovanna-ing')} price={13.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:hawaiana')} ing={t('menu:hawaiana-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:fiorentina')} ing={t('menu:fiorentina-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:capriciosa')} ing={t('menu:capriciosa-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:margherita')} ing={t('menu:margherita-ing')} price={10.8} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:4stagioni')} ing={t('menu:4stagioni-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:bufala')} ing={t('menu:bufala-ing')} price={14.3} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:napoletana')} ing={t('menu:napoletana-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:vegetariana')} ing={t('menu:vegetariana-ing')} price={12.9} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:1000gusti')} ing={t('menu:1000gusti-ing')} price={13.3} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:parmigiana')} ing={t('menu:parmigiana-ing')} price={13.3} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:calzone')} ing={t('menu:calzone-ing')} price={13.3} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
@@ -316,8 +316,8 @@ const Menu = () => {
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:burratina')} ing={t('menu:burratina-ing')} price={15.9} />
             {/* <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:al-salmone')} ing={t('menu:al-salmone-ing')} price={15} /> */}
-            <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={12.8} />
-            <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:white-bufala')} ing={t('menu:white-bufala-ing')} price={13.5} />
+            <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:chicken')} ing={t('menu:chicken-ing')} price={13.3} />
+            <MenuArticle key={_uniqueId('white-pizza-')} name={t('menu:white-bufala')} ing={t('menu:white-bufala-ing')} price={13.9} />
           </AccordionDetails>
         </Accordion>
         <Accordion style={{ width: '90%', margin: '16px 5%' }}>
