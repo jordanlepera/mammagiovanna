@@ -290,7 +290,7 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:gamberi')} ing={t('menu:gamberi-ing')} price={16} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:frutti-del-mare')} ing={t('menu:frutti-del-mare-ing')} price={13.9} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:diavola')} ing={t('menu:diavola-ing')} price={13.5} />
-            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={1329} />
+            <MenuArticle key={_uniqueId('pizza-')} name={t('menu:siciliana')} ing={t('menu:siciliana-ing')} price={13.2} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:mamma-giovanna')} ing={t('menu:mamma-giovanna-ing')} price={13.9} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:hawaiana')} ing={t('menu:hawaiana-ing')} price={13.2} />
             <MenuArticle key={_uniqueId('pizza-')} name={t('menu:fiorentina')} ing={t('menu:fiorentina-ing')} price={13.2} />
@@ -384,6 +384,7 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:alsacian-kir')} price={4.5} capacity="12cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:picon')} price={4.2} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:suze')} price={4.5} capacity="4cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:moretti')} price={4.5} capacity="33cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={3.5} capacity="25cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:pelfort')} price={6.5} capacity="50cl" />
             <MenuArticle key={_uniqueId('aperitif-')} name={t('menu:fischer')} price={3.9} capacity="25cl" />
@@ -424,7 +425,6 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-tonic')} price={3.9} capacity="20cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:ice-tea')} price={3.9} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:cristalline')} price={2.9} capacity="50cl" />
-            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:moretti')} price={4.5} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-agrumes')} price={3.9} capacity="20cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:syrups')} price={2.9} capacity="25cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:diabolo')} price={3} capacity="25cl" />
