@@ -465,6 +465,7 @@ const ExpandIcon = styled(MdExpandMore)`
   color: white;
 `;
 
+
 const CustomAccordionSummary = styled(AccordionSummary)`
   background-color: #918063;
 `;
