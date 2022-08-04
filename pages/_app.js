@@ -1,24 +1,30 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+// import Script from 'next/script';
+import CssBaseline from '@mui/material/CssBaseline';
 import theme from '../components/theme';
 import GlobalFonts from '../components/Font';
-import { config } from '@fortawesome/fontawesome-svg-core';
+// import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
-import { appWithTranslation } from '../i18n';
-config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+import { appWithTranslation } from 'next-i18next';
+// import { appWithTranslation } from '../i18n';
+import createEmotionCache from '../utils/styles/createEmotionCache';
+import { CacheProvider } from '@emotion/react';
 
+// config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+
+const clientSideEmotionCache = createEmotionCache();
 
 class MyApp extends App {
 
   componentDidMount() {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
+    // // Remove the server-side injected CSS.
+    // const jssStyles = document.querySelector('#jss-server-side');
+    // if (jssStyles) {
+    //   jssStyles.parentElement.removeChild(jssStyles);
+    // }
 
     const tarteaucitronScript = document.createElement('script');
     tarteaucitronScript.innerHTML = `
@@ -62,10 +68,11 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, emotionCache = clientSideEmotionCache, pageProps } = this.props;
 
     return (
-      <StylesProvider injectFirst>
+      // <StylesProvider injectFirst>
+      <CacheProvider value={emotionCache}>
         <Head>
           <script type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
           <link rel="preload" href="/tarteaucitron/css/tarteaucitron.css?v=20191031" as="style" />
@@ -76,7 +83,8 @@ class MyApp extends App {
           <Component {...pageProps} />
           <GlobalFonts />
         </ThemeProvider>
-      </StylesProvider>
+      </CacheProvider>
+      // </StylesProvider>
     );
   }
 }

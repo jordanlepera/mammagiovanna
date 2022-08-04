@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Head from 'next/head';
 import _uniqueId from 'lodash/uniqueId';
-import { i18n, useTranslation } from '../i18n';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import Chip from '@material-ui/core/Chip';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { useTranslation } from 'next-i18next';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import { styled } from '@mui/material/styles';
+import Accordion from '@mui/material/Accordion';
+// import Chip from '@mui/material/Chip';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import { MdExpandMore, MdArrowBack } from 'react-icons/md';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import Header from '../components/Header';
 import Body from '../components/Body';
 import Footer from '../components/Footer';
 import MenuSubSection from '../components/MenuSubSection';
 import MenuArticle from '../components/MenuArticle';
-import ArrowBack from '@material-ui/icons/ArrowBack';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import i18nextConfig from '../next-i18next.config';
 
 const pitcherWines = [
   // {
@@ -71,15 +71,27 @@ const alsacianWines = [
   },
 ];
 
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'menu'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
 const Menu = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['common', 'menu']);
+
+  // eslint-disable-next-line react/prop-types
+  const currentLocale = i18nextConfig.i18n.defaultLocale;
 
   return (
     <>
       <Head>
         <title>{t('common:menu')} - {t('common:restaurant')}</title>
       </Head>
-      <Header lang={i18n.language} />
+      <Header lang={currentLocale} />
       <Body>
         <MenuTitle>{t('common:menu')}</MenuTitle>
         {/* <Section>
@@ -448,19 +460,23 @@ const Menu = () => {
   );
 };
 
-const ExpandIcon = styled(ExpandMoreIcon)`
+const ExpandIcon = styled(MdExpandMore)(
+  ({ theme }) => `
+  font-size: 3rem;
   color: white;
-`;
+`,
+);
 
-const CustomAccordionSummary = styled(AccordionSummary)`
+const CustomAccordionSummary = styled(AccordionSummary)(({ theme }) => `
   background-color: #918063;
-`;
+`,
+);
 
-const CustomChip = styled(Chip)`
-  margin-left: 10px;
-`;
+// const CustomChip = styled(Chip)`
+//   margin-left: 10px;
+// `;
 
-const ImportantNote = styled.div`
+const ImportantNote = styled('div')`
   margin: 40px;
   text-align: center;
   font-size: 1.3em;
@@ -468,13 +484,13 @@ const ImportantNote = styled.div`
   color: tomato;
 `;
 
-const LegalMention = styled.div`
+const LegalMention = styled('div')`
   margin: 40px;
   text-align: center;
   white-space: pre-line;
 `;
 
-const SectionTitle = styled(Typography)`
+const SectionTitle = styled(Typography)(({ theme }) => `
   width: 100%;
   color: white;
   margin: 0 10px;
@@ -486,26 +502,27 @@ const SectionTitle = styled(Typography)`
   @media (min-width: 601px) and (max-width: 1199px) {
     font-size: 2em;
   }
-`;
+`,
+);
 
-const Emoji = styled.span`
-  font-size: 3em;
-`;
+// const Emoji = styled('span')`
+//   font-size: 3em;
+// `;
 
-const Section = styled.div`
-  font-size: 1.1em;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  width: 90%;
-  margin: 20px 5%;
-  border-radius: 30px;
-  background-color: tomato;
-  padding: 30px;
-  border: 3px solid lightcoral;
-`;
+// const Section = styled('div')`
+//   font-size: 1.1em;
+//   text-align: center;
+//   font-weight: bold;
+//   color: white;
+//   width: 90%;
+//   margin: 20px 5%;
+//   border-radius: 30px;
+//   background-color: tomato;
+//   padding: 30px;
+//   border: 3px solid lightcoral;
+// `;
 
-const TextSection = styled.div`
+const TextSection = styled('div')`
   font-size: 2em;
   text-align: center;
   @media (max-width: 600px) {
@@ -516,7 +533,7 @@ const TextSection = styled.div`
   }
 `;
 
-const Price = styled.div`
+const Price = styled('div')`
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
@@ -529,7 +546,7 @@ const Price = styled.div`
   }
 `;
 
-const MenuTitle = styled.div`
+const MenuTitle = styled('div')`
   font-size: 10em;
   font-family: 'Monoton', cursive;
   text-align: center;
@@ -544,31 +561,31 @@ const MenuTitle = styled.div`
 const PitcherWine = (props) => {
   const { wines } = props;
   const { t } = useTranslation();
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>
       <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="customized table">
+        <Table sx={{ minWidth: '414px' }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>&nbsp;</StyledTableCell>
-              <StyledTableCell>Verre (12cl)</StyledTableCell>
-              <StyledTableCell>25cl</StyledTableCell>
-              <StyledTableCell>50cl</StyledTableCell>
-              <StyledTableCell>75cl</StyledTableCell>
+              <TableCell>&nbsp;</TableCell>
+              <TableCell>Verre (12cl)</TableCell>
+              <TableCell>25cl</TableCell>
+              <TableCell>50cl</TableCell>
+              <TableCell>75cl</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {wines.map(wine => {
               return (
-                <StyledTableRow key={_uniqueId('array-line-')}>
-                  <StyledTableCell>{wine.name}</StyledTableCell>
-                  <StyledTableCell>{wine.prices[0] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[0]) : ' '}</StyledTableCell>
-                  <StyledTableCell>{wine.prices[1] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[1]) : ' '}</StyledTableCell>
-                  <StyledTableCell>{wine.prices[2] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[2]) : ' '}</StyledTableCell>
-                  <StyledTableCell>{wine.prices[3] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[3]) : ' '}</StyledTableCell>
-                </StyledTableRow>
+                <TableRow key={_uniqueId('array-line-')}>
+                  <TableCell>{wine.name}</TableCell>
+                  <TableCell>{wine.prices[0] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[0]) : ' '}</TableCell>
+                  <TableCell>{wine.prices[1] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[1]) : ' '}</TableCell>
+                  <TableCell>{wine.prices[2] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[2]) : ' '}</TableCell>
+                  <TableCell>{wine.prices[3] !== 0 ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(wine.prices[3]) : ' '}</TableCell>
+                </TableRow>
               );
             })}
           </TableBody>
@@ -578,7 +595,7 @@ const PitcherWine = (props) => {
         <table>
           <tbody>
             <tr>
-              <td><ArrowBack style={{ fontSize: 40 }} /></td>
+              <td><MdArrowBack style={{ fontSize: 40 }} /></td>
               <td>{t('menu:swipe-left')}</td>
             </tr>
           </tbody>
@@ -601,35 +618,37 @@ PitcherWine.propTypes = {
   )
 };
 
-Menu.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'menu'],
-});
+// Menu.getInitialProps = async () => ({
+//   namespacesRequired: ['common', 'menu'],
+// });
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 414,
-  },
-});
+// const useStyles = makeStyles({
+//   table: {
+//     minWidth: 414,
+//   },
+// });
 
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
+// const StyledTableCell = styledBis(TableCell)(
+//   ({ theme }) => `
+//   head: {
+//     backgroundColor: ${theme.palette.common.black},
+//     color: ${theme.palette.common.white},
+//   },
+//   body: {
+//     fontSize: 14,
+//   },
+// `,
+// );
 
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow);
+// const StyledTableRow = styledBis(TableRow)((theme) => ({
+//   root: {
+//     '&:nth-of-type(odd)': {
+//       backgroundColor: theme.palette.action.hover,
+//     },
+//   },
+// }));
 
-const SwipeLeft = styled.div`
+const SwipeLeft = styled('div')`
   visibility: hidden;
   @media (max-width: 600px) {
     visibility: visible;

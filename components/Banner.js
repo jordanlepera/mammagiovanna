@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
 const Banner = () => {
   return (
@@ -10,7 +10,7 @@ const Banner = () => {
   );
 };
 
-const ImgBanner = styled.img`
+const ImgBanner = styled('img')`
   margin-top: 64px;
   width: 100%;
   @media (max-width: 500px) {

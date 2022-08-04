@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Paper from '@material-ui/core/Paper';
+import styled from '@emotion/styled';
+import Paper from '@mui/material/Paper';
 
 const HomePanel = props => {
   const { icon, title } = props;
@@ -38,7 +38,6 @@ const Panel = styled(Paper)`
   padding: 20px;
   text-align: center;
   color: #3D3D3D;
-  }
 `;
 
 HomePanel.propTypes = {

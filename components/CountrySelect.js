@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import dynamic from "next/dynamic";
-import styled from 'styled-components';
-import _uniqueId from 'lodash/uniqueId';
-import { i18n } from '../i18n';
-
+// import dynamic from "next/dynamic";
+import styled from '@emotion/styled';
+// import _uniqueId from 'lodash/uniqueId';
+// import { i18n } from 'next-i18next';
+import Select from 'react-select';
+import i18nextConfig from '../next-i18next.config';
+import { useRouter } from 'next/router';
+// import { useTranslation } from 'next-i18next';
 //Remove use of ssr fo this component because it creates an error in the console
-const Select = dynamic(() => import('react-select'), {
-  ssr: false,
-});
+// const Select = dynamic(() => import('react-select'), {
+//   ssr: false,
+// });
 
 const CountrySelect = () => {
+  // const { t } = useTranslation(['common', 'menu']);
+  const router = useRouter();
+  const [currentLocale, setCurrentLocale] = React.useState(i18nextConfig.i18n.defaultLocale);
 
   const languageOptions = [
     { value: 'fr', label: '🇫🇷 Français' },
@@ -20,8 +26,15 @@ const CountrySelect = () => {
   ];
 
   const handleChange = (selectedOption) => {
-    i18n.changeLanguage(selectedOption.value);
+    router.locale = selectedOption.value;
+    router.replace(router.asPath, undefined, { locale: selectedOption.value });
+    // router.locale = selectedOption.value;
+    // t('change-locale', { changeTo: selectedOption.value });
   };
+
+  React.useEffect(() => {
+    setCurrentLocale(router.locale);
+  }, [router.locale]);
 
   return (
     <SelectCountry
@@ -31,7 +44,7 @@ const CountrySelect = () => {
       isClearable={false}
       isSearchable={false}
       name="language"
-      value={languageOptions.find(o => o.value === i18n.language)}
+      value={languageOptions.find((obj) => obj.value === currentLocale)}
       options={languageOptions}
       onChange={handleChange}
     />
@@ -40,7 +53,7 @@ const CountrySelect = () => {
 
 CountrySelect.propTypes = {
   lang: PropTypes.string
-}
+};
 
 const SelectCountry = styled(Select)`
   font-family: Roboto;

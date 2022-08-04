@@ -1,28 +1,37 @@
 import React from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
-import Grid from '@material-ui/core/Grid';
-import { i18n, useTranslation } from '../i18n';
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+// import { i18n, useTranslation } from '../i18n';
+import { useTranslation, i18n } from 'next-i18next';
 import HomePanel from '../components/HomePanel';
 import Header from '../components/Header';
 import Body from '../components/Body';
 import Footer from '../components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faGoogle, faTripadvisor } from '@fortawesome/free-brands-svg-icons';
-import { faClock, faAddressCard } from '@fortawesome/free-regular-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebookF, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons';
+// import { faClock, faAddressCard } from '@fortawesome/free-regular-svg-icons';
+import { FaTripadvisor, FaFacebookF, FaInstagram, FaGoogle, FaClock, FaAddressCard } from 'react-icons/fa';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...await serverSideTranslations(locale, ['common']),
+  },
+});
 
 const Homepage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   return (
     <>
       <Head>
         <title>{t('common:homepage')} - {t('common:restaurant')}</title>
       </Head>
-      <Header lang={i18n.language} />
+      <Header land={i18n.language} />
       <Body>
         <HomeContent>
-          <Grid container justify="center">
+          <Grid container justifyContent="center">
             {/* <Grid container justify="center" alignItems="center">
               <Section>
                 <Emoji>⚠️</Emoji><br />
@@ -35,9 +44,9 @@ const Homepage = () => {
                 {t('common:lockdown2-see-u')}<br />
               </Section>
             </Grid> */}
-            <Grid container justify="center" alignItems="center">
+            <Grid container justifyContent="center" alignItems="center">
               <GridCellWithRightBorder item xs={10} md={6}>
-                <HomePanel icon={<FontAwesomeIcon icon={faClock} size="4x" />} title={t('common:opening-time')}>
+                <HomePanel icon={<HomeIcon><FaClock /></HomeIcon>} title={t('common:opening-time')}>
                   {t('common:opening-days')}
                   <br />
                   {t('common:lunch-hours')}
@@ -60,7 +69,7 @@ const Homepage = () => {
                 </HomePanel>
               </GridCellWithRightBorder>
               <Grid item xs={10} md={6}>
-                <HomePanel icon={<FontAwesomeIcon icon={faAddressCard} size="4x" />} title={t('common:contact')}>
+                <HomePanel icon={<HomeIcon><FaAddressCard /></HomeIcon>} title={t('common:contact')}>
                   12 rue des marchands
                   <br />
                   68000 COLMAR
@@ -74,16 +83,16 @@ const Homepage = () => {
             <Grid item xs={10} style={{ borderTop: '1px solid #ebebeb' }}>
               <HomePanel title={t('common:follow-us')}>
                 <SocialLink href="https://www.facebook.com/mammagiovanna.colmar/" target="blank">
-                  <SocialIcon icon={faFacebookF} />
+                  <SocialIcon><FaFacebookF /></SocialIcon>
                 </SocialLink>
                 <SocialLink href="https://www.instagram.com/mammagiovanna_fr/" target="blank">
-                  <SocialIcon icon={faInstagram} />
+                  <SocialIcon><FaInstagram /></SocialIcon>
                 </SocialLink>
                 <SocialLink href="https://www.google.com/search?client=firefox-b-d&q=mamma+giovanna+colmar" target="blank">
-                  <SocialIcon icon={faGoogle} />
+                  <SocialIcon><FaGoogle /></SocialIcon>
                 </SocialLink>
                 <SocialLink href="https://www.tripadvisor.fr/Restaurant_Review-g187073-d10439955-Reviews-Mamma_Giovanna-Colmar_Haut_Rhin_Grand_Est.html?m=19905" target="blank">
-                  <SocialIcon icon={faTripadvisor} />
+                  <SocialIcon><FaTripadvisor /></SocialIcon>
                 </SocialLink>
               </HomePanel>
             </Grid>
@@ -95,24 +104,24 @@ const Homepage = () => {
   );
 };
 
-const Emoji = styled.span`
-  font-size: 3em;
-  line-height: 1.5em;
-`;
+// const Emoji = styled('span')`
+//   font-size: 3em;
+//   line-height: 1.5em;
+// `;
 
-const Section = styled.div`
-  font-size: 1.5em;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  width: 90%;
-  margin: 20px 5%;
-  border-radius: 30px;
-  background-color: tomato;
-  padding: 30px;
-  border: 3px solid lightcoral;
-  line-height: 2em;
-`;
+// const Section = styled('div')`
+//   font-size: 1.5em;
+//   text-align: center;
+//   font-weight: bold;
+//   color: white;
+//   width: 90%;
+//   margin: 20px 5%;
+//   border-radius: 30px;
+//   background-color: tomato;
+//   padding: 30px;
+//   border: 3px solid lightcoral;
+//   line-height: 2em;
+// `;
 
 const GridCellWithRightBorder = styled(Grid)`
   @media (min-width: 960px) {
@@ -123,7 +132,7 @@ const GridCellWithRightBorder = styled(Grid)`
   }
 `;
 
-const HomeContent = styled.div`
+const HomeContent = styled('div')`
   padding-top: 100px;
   padding-bottom: 100px;
   line-height: 3em;
@@ -133,21 +142,25 @@ const HomeContent = styled.div`
   }
 `;
 
-const SocialLink = styled.a`
-  color: #3D3D3D
+const SocialLink = styled('a')`
+  color: #3D3D3D;
 `;
 
-const SocialIcon = styled(FontAwesomeIcon)`
+const HomeIcon = styled('div')`
+  font-size: 4em;
+  margin-bottom: 20px;
+`;
+
+const SocialIcon = styled('div')`
   margin: 20px 40px;
-  font-size: 5vh;
+  font-size: 10vh;
   @media (min-width: 960px) {
     margin: 40px 65px;
   }
 `;
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
-
+// Homepage.getInitialProps = async () => ({
+//   namespacesRequired: ['common'],
+// });
 
 export default Homepage;

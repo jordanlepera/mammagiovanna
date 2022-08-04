@@ -1,21 +1,14 @@
-var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
-const withCSS = require('@zeit/next-css');
+// const withPlugins = require("next-compose-plugins");
 
-const localeSubpaths = {};
+// module.exports = withPlugins([], {});
+const { i18n } = require('./next-i18next.config');
 
-module.exports = withCSS({
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
-  publicRuntimeConfig: {
-    localeSubpaths,
-  },
-  webpack: (config) => {
-    // Perform customizations to webpack config
-    config.plugins.push(new CaseSensitivePathsPlugin());
-    return config;
-  },
-  webpackDevMiddleware: config => {
-    // Perform customizations to webpack dev middleware config
-    return config;
-  },
-});
+module.exports = {
+  swcMinify: true,
+  output: 'standalone',
+  i18n,
+  // // COMMENT THIS FEATURE IN DEV
+  // experimental: {
+  //   outputStandalone: true,
+  // },
+};

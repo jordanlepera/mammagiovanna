@@ -1,14 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
+import styled from '@emotion/styled';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Toolbar from '@mui/material/Toolbar';
 import _uniqueId from 'lodash/uniqueId';
-import { i18n, useTranslation, Link } from '../i18n';
+import Link from 'next/link';
+import { i18n, useTranslation } from 'next-i18next';
 import SelectCountry from './CountrySelect';
 
 const Nav = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['common', 'menu']);
 
   const links = [
     {
@@ -42,9 +43,9 @@ const Nav = () => {
   );
 };
 
-Nav.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+// Nav.getInitialProps = async () => ({
+//   namespacesRequired: ['common'],
+// });
 
 const NavlinkContainer = styled.div`
   flex-grow: 1;

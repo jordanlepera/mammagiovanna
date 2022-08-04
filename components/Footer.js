@@ -1,13 +1,13 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import styled from 'styled-components';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 import _uniqueId from 'lodash/uniqueId';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from '../i18n';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaArrowAltCircleUp } from 'react-icons/fa';
+import { useTranslation } from 'next-i18next';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const navlinks = [
     {
@@ -72,7 +72,7 @@ const Footer = () => {
           </NavBlock>
           <GoTopBlock>
             <GoUpButton onClick={() => window.scrollTo(0, 0)}>
-              <SocialIcon icon={faArrowAltCircleUp} />
+              <SocialIcon><FaArrowAltCircleUp /></SocialIcon>
               {t('common:go-to-top')}
             </GoUpButton>
           </GoTopBlock>
@@ -92,27 +92,28 @@ const Footer = () => {
   );
 };
 
-const FooterElemList = styled.ul`
+const FooterElemList = styled('ul')`
   padding-inline-start: 0px;
 `;
 
-const FooterElem = styled.li`
+const FooterElem = styled('li')`
   list-style-type: none;
   min-width: 48px;
   min-height: 30px;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled('a')`
   text-decoration: none;
   color: #ebebeb;
 `;
 
-const Title = styled.div`
+const Title = styled('div')`
   font-weight: bold;
+  color: white;
 `;
 
-const SocialIcon = styled(FontAwesomeIcon)`
-  font-size: 5vh;
+const SocialIcon = styled('div')`
+  font-size: 10vh;
   color: white;
   margin-bottom: 10px;
 `;
@@ -122,6 +123,7 @@ const GoUpButton = styled(Button)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: white;
     & .MuiButton-label {
       flex-direction: column;
       line-height: 1em;
@@ -130,7 +132,7 @@ const GoUpButton = styled(Button)`
     }
 `;
 
-const NavBlock = styled.div`
+const NavBlock = styled('div')`
   padding: 0 20px 0 20px;
   border-right: 1px solid #ebebeb;
   height: 100%;
@@ -138,7 +140,7 @@ const NavBlock = styled.div`
   min-height: 208px;
 `;
 
-const GoTopBlock = styled.div`
+const GoTopBlock = styled('div')`
   padding: 0 20px 0 20px;
   display: flex;
   justify-content: center;
@@ -149,7 +151,7 @@ const GoTopBlock = styled.div`
   width: 33.33%;
 `;
 
-const SocialBlock = styled.div`
+const SocialBlock = styled('div')`
   padding: 0 20px 0 20px;
   border-left: 1px solid #ebebeb;
   text-align: right;
@@ -157,7 +159,7 @@ const SocialBlock = styled.div`
   width: 33.33%;
 `;
 
-const FooterFlex = styled.div`
+const FooterFlex = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +169,7 @@ const FooterFlex = styled.div`
   color: white;
 `;
 
-const FooterContainer = styled.div`
+const FooterContainer = styled('div')`
   display: flex;
   flex-wrap: no-wrap;
   width: 1200px;
@@ -176,7 +178,7 @@ const FooterContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const Author = styled.footer`
+const Author = styled('footer')`
   width: 100%;
   text-align: center;
   color: white;
