@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
-    "start": "serve ./out",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
     "clean": "rimraf -rf out",
     "deploy:dev": "yarn clean && yarn build && netlify deploy",
     "deploy:prod": "netlify deploy --prod"

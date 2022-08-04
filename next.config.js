@@ -5,8 +5,8 @@ const { i18n } = require('./next-i18next.config');
 
 module.exports = {
   swcMinify: true,
-  output: 'standalone',
-  i18n,
+  // output: 'standalone',
+  i18n
   // // COMMENT THIS FEATURE IN DEV
   // experimental: {
   //   outputStandalone: true,
