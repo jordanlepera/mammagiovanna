@@ -460,17 +460,14 @@ const Menu = () => {
   );
 };
 
-const ExpandIcon = styled(MdExpandMore)(
-  ({ theme }) => `
+const ExpandIcon = styled(MdExpandMore)`
   font-size: 3rem;
   color: white;
-`,
-);
+`;
 
-const CustomAccordionSummary = styled(AccordionSummary)(({ theme }) => `
+const CustomAccordionSummary = styled(AccordionSummary)`
   background-color: #918063;
-`,
-);
+`;
 
 // const CustomChip = styled(Chip)`
 //   margin-left: 10px;
@@ -490,7 +487,7 @@ const LegalMention = styled('div')`
   white-space: pre-line;
 `;
 
-const SectionTitle = styled(Typography)(({ theme }) => `
+const SectionTitle = styled(Typography)`
   width: 100%;
   color: white;
   margin: 0 10px;
@@ -502,8 +499,7 @@ const SectionTitle = styled(Typography)(({ theme }) => `
   @media (min-width: 601px) and (max-width: 1199px) {
     font-size: 2em;
   }
-`,
-);
+`;
 
 // const Emoji = styled('span')`
 //   font-size: 3em;
