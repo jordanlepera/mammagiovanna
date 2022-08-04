@@ -433,7 +433,7 @@ const Menu = () => {
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:limonade')} price={2.9} capacity="25cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:pom-lisbeth')} price={4.1} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:coca')} price={4.1} capacity="33cl" />
-            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:orangina')} price={4.1} capacity="33cl" />
+            <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:orangina')} price={4.1} capacity="25cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:schweppes-tonic')} price={4.1} capacity="20cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:ice-tea')} price={4.1} capacity="33cl" />
             <MenuArticle key={_uniqueId('soft-drink-')} name={t('menu:cristalline')} price={2.9} capacity="50cl" />
