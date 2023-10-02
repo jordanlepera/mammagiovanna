@@ -272,8 +272,8 @@ const Menu = () => {
           </CustomAccordionSummary>
           <AccordionDetails style={{ display: 'block' }}>
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:tiramisu')} price={7.5} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbetto-caffe')} ing={t('menu:sorbetto-caffe-ing')} capacity={6} price={4} />
-            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbetto-caffe')} ing={t('menu:sorbetto-caffe-ing')} capacity={10} price={5.5} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbetto-caffe')} ing={t('menu:sorbetto-caffe-ing')} capacity="6cl" price={4} />
+            <MenuArticle key={_uniqueId('dessert-')} name={t('menu:sorbetto-caffe')} ing={t('menu:sorbetto-caffe-ing')} capacity="10cl" price={5.5} />
             {/* <MenuArticle key={_uniqueId('dessert-')} name={t('menu:mousse')} ing={t('menu:mousse-ing')} price={7.5} /> */}
             <MenuArticle key={_uniqueId('dessert-')} name={t('menu:panna-cotta')} ing={t('menu:panna-cotta-ing')} price={7.5} />
             <SectionTitle>{t('menu:our-ice-cream')}</SectionTitle><br />
